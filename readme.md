@@ -24,7 +24,7 @@ The following instructions will show you how to submit your game in the proper f
 - On your fork's page, click on "Contribute"
 - Select "Open Pull Request"
 - Click "Create Pull Request"
-  - Name your pull request with the name of your project folder _({yourArtworkName}-{yourName})_
+  - Name your pull request with the name of your project folder _({Game name}-{Your name})_
   - In the body of your pull request:
     -  Link the github you developed your project on
     -  Include approximately how many hours you spent on your project
