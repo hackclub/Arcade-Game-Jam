@@ -1,0 +1,1 @@
+Go to https://evangan.com/rug-game to play! Instructions are in the game, see if you can find an loophole that lets you win :)

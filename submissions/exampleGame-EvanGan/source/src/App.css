@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: wackClubSans;
+}
+
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+@font-face {
+  font-family: "wackClubSans";   /*Can be any text*/
+  src: local("WackClubSans"),
+    url("./WackClubSans.ttf") format("truetype");
+}
