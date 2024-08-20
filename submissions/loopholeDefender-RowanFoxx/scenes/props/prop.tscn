@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dydm6dhsxsv4b"]
+
+[node name="Prop" type="StaticBody3D"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy4j8e2hykdqq"]
+
+[ext_resource type="PackedScene" uid="uid://dydm6dhsxsv4b" path="res://scenes/props/prop.tscn" id="1_qwgqb"]
+[ext_resource type="PackedScene" uid="uid://b1nn2rwpqb6em" path="res://models/low-poly-medieval-props/Fbx/Barrel_broken.fbx" id="2_l7g7c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5x8tf"]
+radius = 0.629048
+
+[node name="Broken Barrel" instance=ExtResource("1_qwgqb")]
+
+[node name="NavigationObstacle3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10294, 0)
+height = 8.24
+vertices = PackedVector3Array(-4.065, 0, -1.23, 0.053, 0, -2.824, 2.332, 0, -1.686, 2.66, 0, 0.219, 1.695, 0, 2.556, -1.781, 0, 4.611, -1.862, 0, 1.524, -3.114, 0, 0.374)
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.157398, 0.38634, 0)
+shape = SubResource("SphereShape3D_5x8tf")
+
+[node name="Barrel_broken" parent="." index="2" instance=ExtResource("2_l7g7c")]

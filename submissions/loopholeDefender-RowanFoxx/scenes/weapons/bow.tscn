@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkxt6h44nj8pg"]
+
+[ext_resource type="ArrayMesh" uid="uid://b68jce10ito6r" path="res://models/LowPolyMedivalWeapons/meshes/bow.res" id="1_vn54g"]
+[ext_resource type="ArrayMesh" uid="uid://c0g2efy8np0sp" path="res://models/LowPolyMedivalWeapons/meshes/arrow.res" id="2_kba2o"]
+
+[sub_resource type="Animation" id="Animation_f40vx"]
+resource_name = "draw_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowContainer/ArrowMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0055873, 0, -0.108147)]
+}
+
+[sub_resource type="Animation" id="Animation_8sl6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowContainer/ArrowMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowContainer/ArrowMesh:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6l6qe"]
+resource_name = "release"
+length = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowContainer/ArrowMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.011842, 0, 0.111139)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowContainer/ArrowMesh:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.025),
+"transitions": PackedFloat32Array(1e-05),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8jh6r"]
+_data = {
+"RESET": SubResource("Animation_8sl6n"),
+"draw_back": SubResource("Animation_f40vx"),
+"release": SubResource("Animation_6l6qe")
+}
+
+[node name="Bow" type="Node3D"]
+
+[node name="BowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 0, 0)
+mesh = ExtResource("1_vn54g")
+
+[node name="ArrowContainer" type="Node3D" parent="."]
+transform = Transform3D(0.994371, 0, 0.105952, 0, 1, 0, -0.105952, 0, 0.994371, 0.00864346, 0, 0.0148425)
+
+[node name="ArrowMesh" type="MeshInstance3D" parent="ArrowContainer"]
+transform = Transform3D(39.9074, 0, -2.72132, 0, 40, 0, 2.72132, 0, 39.9074, 0, 0, 0)
+mesh = ExtResource("2_kba2o")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8jh6r")
+}

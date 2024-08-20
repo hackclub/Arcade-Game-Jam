@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3uqsjs7v57ob"]
+
+[ext_resource type="PackedScene" uid="uid://dydm6dhsxsv4b" path="res://scenes/props/prop.tscn" id="1_b24xn"]
+[ext_resource type="PackedScene" uid="uid://cy66m4agsnj6d" path="res://models/low-poly-medieval-props/Fbx/ælothesline.fbx" id="2_hl07b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elki0"]
+size = Vector3(3.39001, 1.87769, 0.723633)
+
+[node name="aelothesline" instance=ExtResource("1_b24xn")]
+
+[node name="NavigationObstacle3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.221478, 0)
+height = 28.05
+vertices = PackedVector3Array(-10.119, 0, 2.149, 10.335, 0, 2.117, 10.301, 0, -2.181, -10.148, 0, -2.139)
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00897217, 0.978394, -0.00439453)
+shape = SubResource("BoxShape3D_elki0")
+
+[node name="ælothesline" parent="." index="2" instance=ExtResource("2_hl07b")]

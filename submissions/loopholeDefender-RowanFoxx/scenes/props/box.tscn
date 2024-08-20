@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://k1n0muyys8hy"]
+
+[ext_resource type="PackedScene" uid="uid://dydm6dhsxsv4b" path="res://scenes/props/prop.tscn" id="1_44elv"]
+[ext_resource type="PackedScene" uid="uid://b0g3732d0pt57" path="res://models/low-poly-medieval-props/Fbx/Box.fbx" id="2_2aitk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ck1v2"]
+size = Vector3(0.574707, 0.539917, 0.574951)
+
+[node name="Box" instance=ExtResource("1_44elv")]
+
+[node name="NavigationObstacle3D" parent="." index="0"]
+vertices = PackedVector3Array(1.71, 0, 1.746, -1.809, 0, 1.761, -1.76, 0, -1.743, 1.783, 0, -1.771)
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0.268005, 0.00183105)
+shape = SubResource("BoxShape3D_ck1v2")
+
+[node name="Box" parent="." index="2" instance=ExtResource("2_2aitk")]

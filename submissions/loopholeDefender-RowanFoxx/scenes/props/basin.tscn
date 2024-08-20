@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1sg2v178pq4o"]
+
+[ext_resource type="PackedScene" uid="uid://dydm6dhsxsv4b" path="res://scenes/props/prop.tscn" id="1_71br5"]
+[ext_resource type="PackedScene" uid="uid://6cxn1tptw7fy" path="res://models/low-poly-medieval-props/Fbx/Basin.fbx" id="2_l78oa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nvqwu"]
+height = 0.502847
+radius = 0.410514
+
+[node name="Basin" instance=ExtResource("1_71br5")]
+
+[node name="NavigationObstacle3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0589198, 0)
+height = 4.05
+vertices = PackedVector3Array(-2.485, 0, -0.648, 0.024, 0, -2.492, 2.63, 0, -0.529, 1.615, 0, 2.03, -1.789, 0, 2.148)
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.247373, 0)
+shape = SubResource("CylinderShape3D_nvqwu")
+
+[node name="Basin" parent="." index="2" instance=ExtResource("2_l78oa")]

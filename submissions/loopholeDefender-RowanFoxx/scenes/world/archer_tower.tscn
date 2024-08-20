@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsnyyqr35hbot"]
+
+[ext_resource type="PackedScene" uid="uid://b0oooh6j0g8tr" path="res://models/Buildings/archer_tower.blend" id="1_t7ed4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o5112"]
+height = 0.406342
+radius = 53.1714
+
+[node name="ArcherTower" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 9
+
+[node name="archer_tower" parent="." instance=ExtResource("1_t7ed4")]
+
+[node name="floor" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_o5112")
+
+[node name="frontwall01" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.5634, 15.0226, 0)
+polygon = PackedVector2Array(16.622, 14.952, -16.5086, 14.8676, -16.5398, -15.0419, -1.18955, -15.0854, -1.29814, 8.58326, 1.15829, 8.56399, 1.09565, -15.1379, 16.563, -15.2514)
+
+[node name="frontwall02" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.604, 15.0226, 0)
+polygon = PackedVector2Array(16.622, 14.952, -16.5086, 14.8676, -16.5398, -15.0419, -1.18955, -15.0854, -1.29814, 8.58326, 1.15829, 8.56399, 1.09565, -15.1379, 16.563, -15.2514)
+
+[node name="frontwall03" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.023, -48.48)
+polygon = PackedVector2Array(16.622, 14.952, -16.5086, 14.8676, -16.5398, -15.0419, -1.18955, -15.0854, -1.29814, 8.58326, 1.15829, 8.56399, 1.09565, -15.1379, 16.563, -15.2514)
+
+[node name="frontwall04" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.023, 49.563)
+polygon = PackedVector2Array(16.622, 14.952, -16.5086, 14.8676, -16.5398, -15.0419, -1.18955, -15.0854, -1.29814, 8.58326, 1.15829, 8.56399, 1.09565, -15.1379, 16.563, -15.2514)
+
+[node name="frontwall05" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 33.4281, 15.023, 32.9889)
+polygon = PackedVector2Array(-24.0169, 14.9201, 25.6849, 14.7827, 25.6105, -15.2001, 2.53224, -14.8805, 2.43095, 8.62758, -1.32623, 8.58342, -1.05984, -15.0762, -24.0728, -14.9908)
+
+[node name="frontwall08" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 33.4281, 15.023, -32.9882)
+polygon = PackedVector2Array(-24.0169, 14.9201, 25.6849, 14.7827, 25.6105, -15.2001, 2.53224, -14.8805, 2.43095, 8.62758, -1.32623, 8.58342, -1.05984, -15.0762, -24.0728, -14.9908)
+
+[node name="frontwall06" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -34.1617, 15.023, -32.0424)
+polygon = PackedVector2Array(-24.0169, 14.9201, 25.6849, 14.7827, 25.6105, -15.2001, 2.53224, -14.8805, 2.43095, 8.62758, -1.32623, 8.58342, -1.05984, -15.0762, -24.0728, -14.9908)
+
+[node name="frontwall07" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -34.1617, 15.023, 31.9625)
+polygon = PackedVector2Array(-24.0169, 14.9201, 25.6849, 14.7827, 25.6105, -15.2001, 2.53224, -14.8805, 2.43095, 8.62758, -1.32623, 8.58342, -1.05984, -15.0762, -24.0728, -14.9908)
