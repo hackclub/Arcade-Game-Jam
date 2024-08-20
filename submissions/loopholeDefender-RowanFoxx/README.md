@@ -1,3 +1,6 @@
+## Find it at [itch.io](https://rowanfoxx.itch.io/loophole-defender)
+Alert soldier! Enemies are invading our castle. Defend your tower by shooting through the loopholes.
+
 ### Assets/Tutorials Used
 [Kenney FPS Starter Kit](https://github.com/KenneyNL/Starter-Kit-FPS) \
 [Kenney Prototype Textures](https://kenney.nl/assets/prototype-textures) \
