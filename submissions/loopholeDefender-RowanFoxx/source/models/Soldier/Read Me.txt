@@ -1,0 +1,6 @@
+Body_Tex = Texture of the body inside Armor
+Armor_Tex = Texture of the Armor
+
+You can navigate through the animation using the Dope Sheet / Action Editor.
+
+It's a .blend file, so you will need Blender 3D to open it. 

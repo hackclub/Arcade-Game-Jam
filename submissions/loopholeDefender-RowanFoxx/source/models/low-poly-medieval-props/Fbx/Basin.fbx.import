@@ -1,0 +1,44 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://6cxn1tptw7fy"
+path="res://.godot/imported/Basin.fbx-87b303bcfe0a2612da7a9680250f49f2.scn"
+
+[deps]
+
+source_file="res://models/low-poly-medieval-props/Fbx/Basin.fbx"
+dest_files=["res://.godot/imported/Basin.fbx-87b303bcfe0a2612da7a9680250f49f2.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Material #25.003": {
+"use_external/enabled": true,
+"use_external/path": "res://models/low-poly-medieval-props/Textures/Material #25.001.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

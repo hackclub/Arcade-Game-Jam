@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf0woxx6mkknb"]
+
+[ext_resource type="PackedScene" uid="uid://dydm6dhsxsv4b" path="res://scenes/props/prop.tscn" id="1_3xfqh"]
+[ext_resource type="PackedScene" uid="uid://dro3an40bxrvx" path="res://models/low-poly-medieval-props/Fbx/Haystack_01.fbx" id="2_vhy1y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7eqb0"]
+radius = 0.320877
+height = 1.07575
+
+[node name="Haystack1" instance=ExtResource("1_3xfqh")]
+
+[node name="NavigationObstacle3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128736, 0)
+height = 7.75
+vertices = PackedVector3Array(-2.056, 0, -0.014, -1.415, 0, -1.307, -0.003, 0, -2.051, 1.278, 0, -1.341, 1.89, 0, -0.054, 1.236, 0, 1.181, -0.023, 0, 1.869, -1.277, 0, 1.273)
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.491272, 0)
+shape = SubResource("CapsuleShape3D_7eqb0")
+
+[node name="Haystack_01" parent="." index="2" instance=ExtResource("2_vhy1y")]

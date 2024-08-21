@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://djeb6xoefdy7c"]
+
+[ext_resource type="Script" path="res://scenes/weapons/arrow.gd" id="1_86t52"]
+[ext_resource type="ArrayMesh" uid="uid://c0g2efy8np0sp" path="res://models/LowPolyMedivalWeapons/meshes/arrow.res" id="1_fd0ku"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hfivs"]
+radius = 0.0035418
+height = 0.319997
+
+[node name="Arrow" type="CharacterBody3D" groups=["world"]]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+disable_mode = 1
+collision_layer = 8
+collision_mask = 6
+collision_priority = 2.0
+script = ExtResource("1_86t52")
+
+[node name="ArrowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+mesh = ExtResource("1_fd0ku")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.00656813)
+shape = SubResource("CapsuleShape3D_hfivs")

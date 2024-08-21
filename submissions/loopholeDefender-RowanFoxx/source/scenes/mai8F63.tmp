@@ -1,0 +1,186 @@
+[gd_scene load_steps=17 format=3 uid="uid://dxvvlck8lej3f"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
+[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://scenes/player/player.tscn" id="3_f8rc6"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
+[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
+[ext_resource type="Texture2D" uid="uid://dqtrw7iw7s8is" path="res://models/Textures/PNG/Green/texture_01.png" id="5_u86ru"]
+[ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
+[ext_resource type="Texture2D" uid="uid://dlsdhtdy04r1o" path="res://models/Textures/PNG/Purple/texture_01.png" id="7_t7lg1"]
+[ext_resource type="Texture2D" uid="uid://bndchvrbo384d" path="res://models/Textures/PNG/Purple/texture_04.png" id="8_ygrg7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
+font = ExtResource("3_w27de")
+font_size = 36
+outline_size = 12
+outline_color = Color(0, 0, 0, 0.470588)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knxg5"]
+albedo_texture = ExtResource("5_u86ru")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojhjx"]
+albedo_texture = ExtResource("6_vo7d2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubn3r"]
+albedo_texture = ExtResource("6_vo7d2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukidb"]
+albedo_texture = ExtResource("6_vo7d2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8muwo"]
+albedo_texture = ExtResource("7_t7lg1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dguql"]
+albedo_texture = ExtResource("8_ygrg7")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_3cwbx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_q8fpv")
+
+[node name="Player" parent="." instance=ExtResource("3_f8rc6")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 56.2686, 0)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 3, 0)
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_s8mkj")
+
+[node name="Crosshair" type="TextureRect" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(64, 64)
+
+[node name="Health" type="Label" parent="HUD"]
+offset_left = 48.0
+offset_top = 627.0
+offset_right = 138.0
+offset_bottom = 672.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "100%"
+label_settings = SubResource("LabelSettings_fpmwk")
+vertical_alignment = 2
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Level" type="Node" parent="."]
+
+[node name="LevelPrototype" type="Node" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="LevelPrototype"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+material_override = SubResource("StandardMaterial3D_knxg5")
+use_collision = true
+size = Vector3(500, 1, 500)
+
+[node name="Walls" type="Node" parent="LevelPrototype"]
+
+[node name="Wall" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
+
+[node name="Wall" type="CSGBox3D" parent="LevelPrototype/Walls/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 26, -244)
+material_override = SubResource("StandardMaterial3D_ojhjx")
+material_overlay = SubResource("StandardMaterial3D_ubn3r")
+size = Vector3(500, 50, 1)
+
+[node name="Opening" type="CSGBox3D" parent="LevelPrototype/Walls/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -244)
+operation = 2
+size = Vector3(20, 20, 20)
+
+[node name="Wall2" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 486)
+
+[node name="Wall" type="CSGBox3D" parent="LevelPrototype/Walls/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 26, -244)
+material_override = SubResource("StandardMaterial3D_ojhjx")
+material_overlay = SubResource("StandardMaterial3D_ubn3r")
+size = Vector3(500, 50, 1)
+
+[node name="Opening" type="CSGBox3D" parent="LevelPrototype/Walls/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -244)
+operation = 2
+size = Vector3(20, 20, 20)
+
+[node name="Wall3" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
+
+[node name="Wall" type="CSGBox3D" parent="LevelPrototype/Walls/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 26, -244)
+material_override = SubResource("StandardMaterial3D_ojhjx")
+material_overlay = SubResource("StandardMaterial3D_ubn3r")
+size = Vector3(500, 50, 1)
+
+[node name="Opening" type="CSGBox3D" parent="LevelPrototype/Walls/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -244)
+operation = 2
+size = Vector3(20, 20, 20)
+
+[node name="Wall4" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 487, 0, 1)
+
+[node name="Wall" type="CSGBox3D" parent="LevelPrototype/Walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 26, -244)
+material_override = SubResource("StandardMaterial3D_ukidb")
+material_overlay = SubResource("StandardMaterial3D_ubn3r")
+size = Vector3(500, 50, 1)
+
+[node name="Opening" type="CSGBox3D" parent="LevelPrototype/Walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -244)
+operation = 2
+size = Vector3(20, 20, 20)
+
+[node name="Tower" type="Node" parent="LevelPrototype"]
+
+[node name="UpperTower" type="CSGCombiner3D" parent="LevelPrototype/Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
+use_collision = true
+
+[node name="UpperBaseWalls" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+size = Vector3(32, 32, 32)
+material = SubResource("StandardMaterial3D_8muwo")
+
+[node name="UpperHollow" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+operation = 2
+size = Vector3(30, 30, 30)
+material = SubResource("StandardMaterial3D_dguql")
+
+[node name="Window" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 9, 0)
+operation = 2
+size = Vector3(3, 15, 2)
+
+[node name="Window2" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 9, 0)
+operation = 2
+size = Vector3(3, 15, 2)
+
+[node name="Window3" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 9, 16)
+operation = 2
+size = Vector3(3, 15, 2)
+
+[node name="Window4" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 9, -16)
+operation = 2
+size = Vector3(3, 15, 2)
+
+[node name="Decoration" type="Node" parent="."]

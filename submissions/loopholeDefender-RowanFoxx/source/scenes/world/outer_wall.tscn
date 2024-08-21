@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsr33pjne61le"]
+
+[ext_resource type="PackedScene" uid="uid://d3rom6840eldk" path="res://models/Buildings/wall.blend" id="1_8agh3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g72wx"]
+size = Vector3(30.9994, 105.854, 698.727)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gsnvg"]
+height = 203.449
+radius = 78.5888
+
+[node name="OuterWall" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 8
+
+[node name="wall" parent="." instance=ExtResource("1_8agh3")]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+visible = false
+vertices = PackedVector3Array(8.72319, 0, -385.004, 10.6814, 0, -74.2469, 38.4202, 0, -67.3256, 70.3298, 0, -42.1222, 79.408, 0, 8.26115, 59.9431, 0, 50.8064, 2.44107, 0, 87.8647, -64.3751, 0, 68.2174, -93.3757, 0, 15.6511, -93.3051, 0, -291.892, -10.1909, 0, -305.732, -10.5501, 0, -385.813)
+
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="."]
+visible = false
+vertices = PackedVector3Array(11.0255, 0, -463.329, 18.7204, 0, -782.018, -34.1421, 0, -787.114, -10.052, 0, -462.685)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775818, 52.4271, -424.859)
+shape = SubResource("BoxShape3D_g72wx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 99.7003, 0)
+shape = SubResource("CylinderShape3D_gsnvg")

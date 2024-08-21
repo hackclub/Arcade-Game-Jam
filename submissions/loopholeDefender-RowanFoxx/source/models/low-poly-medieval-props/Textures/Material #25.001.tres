@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://kyctgwu04nqx"]
+
+[ext_resource type="Texture2D" uid="uid://k4fx64b74xcp" path="res://models/low-poly-medieval-props/Textures/T_Medieval_ Props.png" id="1_4pici"]
+
+[resource]
+resource_name = "Material #25.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.79059, 0.79059, 0.79059, 1)
+albedo_texture = ExtResource("1_4pici")
+emission_enabled = true
+emission = Color(0.79059, 0.79059, 0.79059, 1)
+emission_energy_multiplier = 0.0
