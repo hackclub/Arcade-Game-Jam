@@ -15,7 +15,7 @@ Alert soldier! Enemies are invading our castle. Defend your tower by shooting th
 | --- | --- |
 | <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> | Movement |
 | <kbd>Spacebar</kbd> | Jump |
-| <kbd>Left mouse button</kbd> | Shoot |
+| <kbd>Left mouse button</kbd> | Hold to Shoot |
 
 ### License
 
