@@ -1,5 +1,7 @@
 # How to submit to the jam!
-The following instructions will show you how to submit your game in the proper format
+The following instructions will show you how to submit your game in the proper format. 
+
+#### Please read the entirety of the instructions carefully so you submit in the correct format!
 
 ## Setup your submission:
 1. **Create a folder named {Game name}-{Your name} _(Replace the brackets with your info)_**
@@ -29,6 +31,7 @@ The following instructions will show you how to submit your game in the proper f
     -  Link the github you developed your project on
     -  Include approximately how many hours you spent on your project
     -  Include a very brief description of your project (1-3 sentences)
+    -  If you were on a team of two, please spesify your teammate's github username
 
 ### Congrats, you are done submitting!
 If you have any questions feel free to ask them in [#arcade-jam](https://hackclub.slack.com/archives/C07FMS2CC5A) on slack.
