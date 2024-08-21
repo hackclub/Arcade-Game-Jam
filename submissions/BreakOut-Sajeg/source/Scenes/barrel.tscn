@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://vlj7bhi0c4gq"]
+
+[ext_resource type="Script" path="res://Scripts/Barrel.gd" id="1_gykoh"]
+[ext_resource type="Theme" uid="uid://cpwjiok04og8e" path="res://Assets/theme.tres" id="2_jmrls"]
+[ext_resource type="Texture2D" uid="uid://dcf1okg51v23f" path="res://Assets/Props/Barrel.png" id="2_ni3nf"]
+[ext_resource type="Texture2D" uid="uid://bwouyhut5oj4h" path="res://Assets/Props/Barrel_empty.png" id="3_vxa6d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt3bn"]
+size = Vector2(15, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s5u5"]
+radius = 13.0
+height = 38.0
+
+[node name="Barrel" type="StaticBody2D"]
+script = ExtResource("1_gykoh")
+
+[node name="Barrel" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ni3nf")
+
+[node name="Barrel_empty" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, 0.5)
+texture = ExtResource("3_vxa6d")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = 10.0
+offset_right = 12.0
+offset_bottom = 19.0
+rotation = -1.5708
+theme = ExtResource("2_jmrls")
+theme_override_constants/line_spacing = 1
+theme_override_font_sizes/font_size = 7
+text = "Loot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_xt3bn")
+
+[node name="Object" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_0s5u5")

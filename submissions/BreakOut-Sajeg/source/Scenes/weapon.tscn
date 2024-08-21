@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba4ljslk2ihlo"]
+
+[ext_resource type="Texture2D" uid="uid://btitahw6hkvs7" path="res://Assets/skeleton/wand.png" id="1_yccyr"]
+[ext_resource type="Texture2D" uid="uid://ceblmyxtr6wii" path="res://Assets/skeleton/Hands.png" id="2_kx7if"]
+
+[node name="weapon" type="Node2D"]
+
+[node name="Wand" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -1)
+rotation = -1.5708
+texture = ExtResource("1_yccyr")
+
+[node name="Hands" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_kx7if")

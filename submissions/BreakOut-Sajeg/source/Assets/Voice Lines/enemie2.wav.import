@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b87kgq3as8ovw"
+path="res://.godot/imported/enemie2.wav-d3117dc078d3b6af7fcc926cfb85203e.sample"
+
+[deps]
+
+source_file="res://Assets/Voice Lines/enemie2.wav"
+dest_files=["res://.godot/imported/enemie2.wav-d3117dc078d3b6af7fcc926cfb85203e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

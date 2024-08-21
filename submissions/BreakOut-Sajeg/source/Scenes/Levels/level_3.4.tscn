@@ -1,0 +1,257 @@
+[gd_scene load_steps=14 format=3 uid="uid://bquxkwuy18e8o"]
+
+[ext_resource type="TileSet" uid="uid://iga47b5fiujd" path="res://Assets/tileSet.tres" id="1_85dj5"]
+[ext_resource type="Script" path="res://Scripts/map.gd" id="2_2okxx"]
+[ext_resource type="PackedScene" uid="uid://bys67aluqyox4" path="res://Scenes/player.tscn" id="2_4g3ic"]
+[ext_resource type="PackedScene" uid="uid://c7nchaclmj50b" path="res://Scenes/door.tscn" id="3_rpcrh"]
+[ext_resource type="PackedScene" uid="uid://vlj7bhi0c4gq" path="res://Scenes/barrel.tscn" id="4_6spd2"]
+[ext_resource type="PackedScene" uid="uid://csd6ikilylmnc" path="res://Scenes/wizard.tscn" id="5_bymn7"]
+[ext_resource type="Script" path="res://Scripts/lever.gd" id="5_hn1kh"]
+[ext_resource type="Texture2D" uid="uid://bec53yikiiml6" path="res://Assets/lever_down.png" id="7_2xchx"]
+[ext_resource type="Texture2D" uid="uid://bvvl6iq8wevv" path="res://Assets/lever_up.png" id="8_rg8vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix46r"]
+size = Vector2(12, 5)
+
+[sub_resource type="Animation" id="Animation_a80hx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wizard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(187, 44)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wizard/Idle-sheet:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wizard/Run-sheet:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wizard/Run-sheet:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wizard/Idle-sheet:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Wizard/Run-sheet:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_8br8o"]
+resource_name = "flip"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wizard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(187, 44), Vector2(187, 63)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wizard/Idle-sheet:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wizard/Run-sheet:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wizard/Run-sheet:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wizard/Idle-sheet:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Wizard/Run-sheet:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_61jp2"]
+_data = {
+"RESET": SubResource("Animation_a80hx"),
+"flip": SubResource("Animation_8br8o")
+}
+
+[node name="level 3_4" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -23772.0
+offset_top = -15144.0
+offset_right = 24585.0
+offset_bottom = 16030.0
+color = Color(0.0781567, 0.0781567, 0.0703441, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_85dj5")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(196612, 327680, 1, 196611, 327680, 1, 196610, 327680, 1, 262147, 327680, 1, 262146, 327680, 1, 131074, 524288, 2, 131075, 327680, 0, 262148, 327680, 1, 131076, 524288, 2, 196613, 327680, 1, 262149, 327680, 1, 131077, 327680, 0, 196614, 327680, 1, 262150, 327680, 1, 131078, 524288, 2, 196615, 327680, 1, 262151, 327680, 1, 131079, 327680, 0, 196616, 327680, 1, 262152, 327680, 1, 131080, 327680, 0, 196617, 327680, 1, 262153, 327680, 1, 131081, 524288, 2, 196618, 327680, 1, 262154, 327680, 1, 131082, 524288, 2, 196619, 327680, 1, 262155, 327680, 1, 131083, 327680, 0, 196620, 393216, 1, 262156, 393216, 1, 131084, 393216, 0, 327691, 327680, 1, 327692, 393216, 1, 327690, 327680, 1, 393227, 327680, 1, 393228, 458752, 1, 393226, 327680, 1, 458763, 327680, 1, 458764, 458752, 1, 458762, 327680, 1, 524299, 327680, 1, 524300, 458752, 1, 524298, 327680, 1, 589835, 524288, 0, 589836, 393216, 2, 589834, 327680, 2, 524297, 327680, 1, 589833, 327680, 2, 458761, 327680, 1, 524296, 327680, 1, 589832, 524288, 0, 458760, 327680, 1, 524295, 327680, 1, 589831, 327680, 2, 458759, 327680, 1, 524294, 327680, 1, 589830, 524288, 0, 458758, 327680, 1, 524293, 327680, 1, 589829, 327680, 2, 458757, 327680, 1, 524292, 327680, 1, 589828, 524288, 0, 458756, 327680, 1, 524291, 327680, 1, 589827, 524288, 0, 458755, 327680, 1, 524290, 327680, 1, 589826, 327680, 2, 458754, 327680, 1, 393219, 327680, 1, 393218, 327680, 1, 393220, 327680, 1, 327683, 327680, 1, 327682, 327680, 1, 327684, 327680, 1, 327685, 327680, 1, 393221, 327680, 1, 327687, 327680, 1, 327688, 327680, 1, 327686, 327680, 1, 393222, 327680, 1, 393223, 327680, 1, 393224, 327680, 1, 327689, 327680, 1, 393225, 327680, 1, 524289, 589824, 1, 458753, 262144, 1, 393217, 589824, 1, 327681, 589824, 1, 262145, 262144, 1, 196609, 262144, 1, 131073, 262144, 0, 589825, 262144, 2)
+layer_1/name = "Walls"
+layer_1/tile_data = PackedInt32Array(2, 131072, 0, 5, 0, 0, 6, 131072, 0, 8, 0, 0, 9, 65536, 0, 10, 65536, 0, 11, 65536, 0, 12, 131072, 0, 65543, 196608, 1, -65529, 196608, 0, 589837, 262144, 5, 524301, 262144, 5, 458765, 262144, 5, 393229, 262144, 5, 327693, 262144, 5, 262157, 262144, 5, 196621, 262144, 5, 131085, 262144, 5, 65549, 262144, 5, 13, 262144, 5, -65523, 262144, 4, 655372, 65536, 3, 655371, 65536, 3, 655370, 65536, 3, 655369, 65536, 3, 655368, 65536, 3, 655367, 65536, 3, 655366, 65536, 3, 655365, 65536, 3, 655364, 65536, 3, 655363, 65536, 3, 655362, 65536, 3, 655373, 262144, 6, -65536, 196608, 4, 0, 196608, 5, 65536, 196608, 5, 131072, 196608, 5, 196608, 196608, 5, 262144, 196608, 5, 327680, 196608, 5, 393216, 196608, 5, 458752, 196608, 5, 524288, 196608, 5, 589824, 196608, 5, 655360, 196608, 6, 1, 0, 0, 655361, 65536, 3, 4, 65536, 10, 3, 0, 10)
+layer_2/name = "Decoration"
+layer_2/tile_data = PackedInt32Array(65545, 262145, 2, 131081, 262145, 3, 196617, 262145, 4, 65546, 327681, 2, 131082, 327681, 3, 196618, 327681, 4, 262149, 196609, 12, 327685, 196609, 13, 327686, 65537, 4, 327684, 131073, 3, 393224, 524288, 12, 393225, 589824, 12, 458762, 589824, 13, 458761, 524288, 13, 327690, 589824, 11, 393226, 589824, 12)
+layer_3/name = "Table Decoration"
+layer_3/tile_data = PackedInt32Array(65546, 65537, 15, 131082, 655361, 5)
+script = ExtResource("2_2okxx")
+
+[node name="Door" parent="." instance=ExtResource("3_rpcrh")]
+position = Vector2(64, 8)
+next_scene = "res://Scenes/Levels/level_3.tscn"
+locked = false
+
+[node name="Barrel" parent="." instance=ExtResource("4_6spd2")]
+position = Vector2(27, 118)
+id = 19
+
+[node name="Barrel2" parent="." instance=ExtResource("4_6spd2")]
+position = Vector2(136, 31)
+id = 20
+
+[node name="lever" type="StaticBody2D" parent="."]
+position = Vector2(201, 50)
+script = ExtResource("5_hn1kh")
+
+[node name="LeverDown" type="Sprite2D" parent="lever"]
+texture_filter = 1
+texture = ExtResource("7_2xchx")
+
+[node name="LeverUp" type="Sprite2D" parent="lever"]
+visible = false
+texture_filter = 1
+position = Vector2(0, -5)
+texture = ExtResource("8_rg8vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lever"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_ix46r")
+
+[node name="Wizard" parent="." instance=ExtResource("5_bymn7")]
+position = Vector2(187, 44)
+id = 4
+
+[node name="Idle-sheet" parent="Wizard" index="1"]
+visible = false
+
+[node name="Run-sheet" parent="Wizard" index="2"]
+visible = true
+frame = 1
+
+[node name="AIManager" parent="Wizard" index="5" node_paths=PackedStringArray("player")]
+character = "You are grumpy and unfriendly wizard in a Dungeon. You have a lever behind you, that you can use to lower the spikes. I can ask you to do that and then give me the item spikes_down from your inventory, but I first need to convince you to do that. If you still have spikes_down in your inventory it means that the lever is not flipped.s"
+inventory = ["spikes_down"]
+has_friendship = false
+player = NodePath("../../Player")
+
+[node name="Player" parent="." node_paths=PackedStringArray("lever") instance=ExtResource("2_4g3ic")]
+position = Vector2(62, 35)
+level = 8
+lever = NodePath("../lever")
+
+[node name="FlipAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_61jp2")
+}
+
+[connection signal="new_response" from="Wizard/AIManager" to="Player" method="_on_ai_manager_new_response"]
+[connection signal="animation_finished" from="FlipAnimation" to="Player" method="_on_flip_animation_animation_finished"]
+
+[editable path="Wizard"]
