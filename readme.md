@@ -1,5 +1,5 @@
 # How to submit to the jam!
-The following instructions will show you how to submit your game in the proper format. 
+The following instructions will show you how to submit your game in the proper format.
 
 #### Please read the entirety of the instructions carefully so you submit in the correct format!
 
@@ -34,4 +34,4 @@ The following instructions will show you how to submit your game in the proper f
     -  If you were on a team of two, please spesify your teammate's github username
 
 ### Congrats, you are done submitting!
-If you have any questions feel free to ask them in [#arcade-jam](https://hackclub.slack.com/archives/C07FMS2CC5A) on slack.
+If you have any questions feel free to ask them in [#arcade-jam](https://hackclub.slack.com/archives/C07FMS2CC5A) on slack. _[Here is a checklist if that's helpful :)](https://github.com/hackclub/Arcade-Game-Jam/blob/main/.github/PULL_REQUEST_TEMPLATE.md)_
