@@ -4,7 +4,7 @@ If I finish early and have the time and confidence, I might even add an actual l
 
 Note: School has already started for me so I will not have enough time to code a whole boss fight sadly but I'm pretty proud of what I have  accomplished.
 # Boilerplate
-Since I have no idea what I'm doing, I'm going to use the boilerplate from phaser's game tutorial to get me started
+Since I have Qno idea what I'm doing, I'm going to use the boilerplate from phaser's game tutorial to get me started
 https://phaser.io/tutorials/making-your-first-phaser-3-game/part1
 # Phaser google font tutorial
 I followed a tutorial to import google fonts into the game.
