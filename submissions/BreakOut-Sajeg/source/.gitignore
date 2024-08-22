@@ -1,0 +1,24 @@
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
+
+.godot/
+
+config.cfg
+
+/.idea
+/Scripts/.idea/.gitignore
+/.idea/.gitignore
+/.idea/encodings.xml
+/Scripts/.idea/encodings.xml
+/Folder.DotSettings.user
+/.idea/indexLayout.xml
+/Scripts/.idea/indexLayout.xml
+/.idea/libraries/GdSdk_4_2_2.xml
+/.idea/vcs.xml
+/Scripts/.idea/vcs.xml

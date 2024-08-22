@@ -1,0 +1,58 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://c4ryc4e6x5ufg"]
+
+[ext_resource type="FontFile" uid="uid://b11hb11meid84" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="1_n45b6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ga2yl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or31i"]
+bg_color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkey3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5wcr"]
+bg_color = Color(0.568973, 0.568973, 0.568973, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4viqg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhstj"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08a5j"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1n2l"]
+bg_color = Color(0.568627, 0.568627, 0.568627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxcqr"]
+bg_color = Color(0.0177324, 0.0177324, 0.0177324, 0.909804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18dvi"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg08g"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gk5v"]
+
+[resource]
+default_font = ExtResource("1_n45b6")
+default_font_size = 6
+Button/styles/focus = SubResource("StyleBoxEmpty_ga2yl")
+Button/styles/hover = SubResource("StyleBoxFlat_or31i")
+Button/styles/normal = SubResource("StyleBoxFlat_hkey3")
+Button/styles/pressed = SubResource("StyleBoxFlat_e5wcr")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_4viqg")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_vhstj")
+ItemList/styles/panel = SubResource("StyleBoxFlat_08a5j")
+ItemList/styles/selected = SubResource("StyleBoxFlat_p1n2l")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/styles/normal = SubResource("StyleBoxFlat_wxcqr")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/constants/caret_width = 0
+LineEdit/styles/focus = SubResource("StyleBoxFlat_18dvi")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_jg08g")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_7gk5v")
+TextEdit/colors/background_color = Color(0, 0, 0, 1)

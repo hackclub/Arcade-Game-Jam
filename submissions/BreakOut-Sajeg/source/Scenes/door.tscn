@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7nchaclmj50b"]
+
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="1_uou52"]
+[ext_resource type="Texture2D" uid="uid://co28xg02qcvow" path="res://Assets/Props/door.png" id="2_lvp8y"]
+[ext_resource type="Theme" uid="uid://cpwjiok04og8e" path="res://Assets/theme.tres" id="4_keond"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8e66"]
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koe25"]
+size = Vector2(32, 12)
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_uou52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_lvp8y")
+
+[node name="Door" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0, 11)
+shape = SubResource("CapsuleShape2D_i8e66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_koe25")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -11.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 23.0
+theme = ExtResource("4_keond")
+theme_override_font_sizes/font_size = 6
+text = "Door is 
+locked"
+horizontal_alignment = 1
+vertical_alignment = 1

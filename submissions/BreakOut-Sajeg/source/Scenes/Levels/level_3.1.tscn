@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn21otsi5lgeg"]
+
+[ext_resource type="TileSet" uid="uid://iga47b5fiujd" path="res://Assets/tileSet.tres" id="1_4gslb"]
+[ext_resource type="Script" path="res://Scripts/map.gd" id="2_8y60l"]
+[ext_resource type="PackedScene" uid="uid://c7nchaclmj50b" path="res://Scenes/door.tscn" id="2_jvnps"]
+[ext_resource type="PackedScene" uid="uid://csd6ikilylmnc" path="res://Scenes/wizard.tscn" id="3_1hv1a"]
+[ext_resource type="PackedScene" uid="uid://bys67aluqyox4" path="res://Scenes/player.tscn" id="4_74pdr"]
+[ext_resource type="PackedScene" uid="uid://vlj7bhi0c4gq" path="res://Scenes/barrel.tscn" id="5_hl0jj"]
+
+[node name="Level 3_1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -23776.0
+offset_top = -15145.0
+offset_right = 24581.0
+offset_bottom = 16029.0
+color = Color(0.0781567, 0.0781567, 0.0703441, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_4gslb")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(458764, 327680, 1, 327692, 524288, 2, 393227, 589824, 1, 458765, 327680, 1, 393229, 327680, 1, 327693, 524288, 2, 458763, 262144, 1, 393230, 327680, 1, 458766, 327680, 1, 327694, 327680, 0, 393231, 327680, 1, 458767, 327680, 1, 327695, 524288, 2, 393232, 327680, 1, 458768, 327680, 1, 327696, 327680, 0, 393233, 458752, 1, 458769, 458752, 1, 327697, 393216, 0, 327691, 262144, 0, 524300, 327680, 1, 524301, 327680, 1, 524299, 262144, 1, 589836, 327680, 2, 589837, 524288, 0, 589835, 262144, 2, 524304, 327680, 1, 524305, 458752, 1, 524303, 327680, 1, 524302, 327680, 1, 589839, 524288, 0, 589838, 327680, 2, 589841, 393216, 2, 589840, 524288, 0, 393228, 327680, 1)
+layer_1/name = "Walls"
+layer_1/tile_data = PackedInt32Array(196619, 0, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 0, 10, 196623, 65536, 10, 196624, 65536, 0, 196625, 131072, 0, 131090, 262144, 4, 131082, 196608, 4, 655370, 196608, 6, 655378, 262144, 6, 196626, 262144, 5, 262162, 262144, 5, 327698, 262144, 5, 393234, 262144, 5, 458770, 262144, 5, 524306, 262144, 5, 589842, 262144, 5, 196618, 196608, 5, 262154, 196608, 5, 327690, 196608, 5, 393226, 196608, 5, 458762, 196608, 5, 524298, 196608, 5, 589834, 196608, 5, 655371, 65536, 3, 655372, 65536, 3, 655373, 65536, 3, 655374, 65536, 3, 655375, 65536, 3, 655376, 65536, 3, 655377, 65536, 3)
+layer_2/name = "Decoration"
+layer_2/tile_data = PackedInt32Array(196620, 589825, 0, 262156, 589825, 1, 262155, 65537, 2, 458765, 458752, 13, 458767, 589824, 11, 458766, 655360, 11)
+script = ExtResource("2_8y60l")
+
+[node name="Door" parent="." instance=ExtResource("2_jvnps")]
+position = Vector2(240, 56)
+next_scene = "res://Scenes/Levels/level_3.tscn"
+locked = false
+
+[node name="Barrel" parent="." instance=ExtResource("5_hl0jj")]
+position = Vector2(201, 79)
+id = 15
+
+[node name="Wizard" parent="." instance=ExtResource("3_1hv1a")]
+position = Vector2(272, 146)
+id = 3
+
+[node name="AIManager" parent="Wizard" index="5" node_paths=PackedStringArray("player")]
+npc_name = "Rockie"
+character = "You are a merchant. You have some products and like to trade a lot. It doesn't matter if I have something valuable you just want to trade."
+inventory = ["Key", "Talking Orc", "Artifact", "Piece of paper"]
+player = NodePath("../../Player")
+
+[node name="Player" parent="." instance=ExtResource("4_74pdr")]
+position = Vector2(240, 84)
+level = 5
+
+[connection signal="new_response" from="Wizard/AIManager" to="Player" method="_on_ai_manager_new_response"]
+
+[editable path="Wizard"]

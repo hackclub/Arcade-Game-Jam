@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8r41mfrpom7v"
+path="res://.godot/imported/multiple_skeletons.wav-30e86995f41da1c56c9fdc6fd644cecf.sample"
+
+[deps]
+
+source_file="res://Assets/Voice Lines/multiple_skeletons.wav"
+dest_files=["res://.godot/imported/multiple_skeletons.wav-30e86995f41da1c56c9fdc6fd644cecf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
