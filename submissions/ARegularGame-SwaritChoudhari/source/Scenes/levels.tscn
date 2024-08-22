@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://dti7ymbyqmodp"]
+
+[ext_resource type="Texture2D" uid="uid://br8jxcg12xafd" path="res://Assets/Background/Brown.png" id="1_nlnvu"]
+[ext_resource type="Script" path="res://Scripts/ButtonMenu.gd" id="2_78uv5"]
+[ext_resource type="PackedScene" uid="uid://b20157q0h1v61" path="res://Scenes/menu.tscn" id="3_myw2t"]
+
+[node name="levels" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nlnvu")
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 207.0
+offset_top = 456.0
+offset_right = 415.0
+offset_bottom = 507.0
+text = "Story Mode"
+script = ExtResource("2_78uv5")
+
+[node name="Button7" type="Button" parent="."]
+offset_left = 519.0
+offset_top = 198.0
+offset_right = 627.0
+offset_bottom = 249.0
+text = "Back
+"
+script = ExtResource("2_78uv5")
+scene = ExtResource("3_myw2t")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 456.0
+offset_right = 679.0
+offset_bottom = 507.0
+text = "Story Mode"
+script = ExtResource("2_78uv5")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 745.0
+offset_top = 456.0
+offset_right = 953.0
+offset_bottom = 507.0
+text = "Story Mode"
+script = ExtResource("2_78uv5")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 745.0
+offset_top = 344.0
+offset_right = 953.0
+offset_bottom = 395.0
+text = "Story Mode"
+script = ExtResource("2_78uv5")
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 344.0
+offset_right = 679.0
+offset_bottom = 395.0
+text = "Story Mode"
+script = ExtResource("2_78uv5")
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 203.0
+offset_top = 344.0
+offset_right = 411.0
+offset_bottom = 395.0
+text = "Story Mode"
+script = ExtResource("2_78uv5")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(0.44475, 0.28196, 0.119711, 1)
+offset_left = 458.0
+offset_top = 123.0
+offset_right = 756.0
+offset_bottom = 187.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Level Select"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button7" to="Button7" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]
+[connection signal="pressed" from="Button6" to="Button6" method="_on_pressed"]

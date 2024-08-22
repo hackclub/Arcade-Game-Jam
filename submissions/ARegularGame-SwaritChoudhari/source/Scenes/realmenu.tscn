@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://nejkhguaiw3m"]
+
+[ext_resource type="PackedScene" uid="uid://ykmvfaio0jyk" path="res://Scenes/real_game_music.tscn" id="1_hcsdi"]
+[ext_resource type="Texture2D" uid="uid://br8jxcg12xafd" path="res://Assets/Background/Brown.png" id="1_xu6px"]
+[ext_resource type="Texture2D" uid="uid://bn6baq1n12vvu" path="res://Assets/flag-orpheus-left.png" id="2_fkh3e"]
+[ext_resource type="Texture2D" uid="uid://cfkkpd1f7rb5w" path="res://Assets/orpheus-skateboarding-PCB.png" id="3_xbqhk"]
+[ext_resource type="Script" path="res://Scripts/ButtonMenu.gd" id="4_pxanx"]
+[ext_resource type="PackedScene" uid="uid://cmo4obhtpha5b" path="res://Scenes/real_level_1.tscn" id="6_6eh6r"]
+[ext_resource type="Texture2D" uid="uid://2tnsr31gd7c3" path="res://Assets/Group 2.png" id="6_6xnn2"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="RealGameMusic" parent="." instance=ExtResource("1_hcsdi")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xu6px")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_top = 70.0
+offset_right = 119.0
+offset_bottom = 140.0
+texture = ExtResource("2_fkh3e")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 285.0
+offset_top = 257.0
+offset_right = 445.0
+offset_bottom = 414.0
+texture = ExtResource("3_xbqhk")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 288.0
+offset_top = 143.0
+offset_right = 825.0
+offset_bottom = 385.0
+texture = ExtResource("6_6xnn2")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 191.0
+offset_bottom = 68.0
+text = "For a Game Jam hosted by"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(0.44475, 0.28196, 0.119711, 1)
+offset_left = 490.0
+offset_top = 85.0
+offset_right = 664.0
+offset_bottom = 135.0
+theme_override_font_sizes/normal_font_size = 30
+text = "J̶u̶s̶t̶Y̶o̶u̶r̶"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+modulate = Color(0.678431, 0, 0.0862745, 1)
+offset_left = 384.0
+offset_top = 165.0
+offset_right = 769.0
+offset_bottom = 408.0
+rotation = 0.4762
+theme_override_font_sizes/normal_font_size = 120
+text = "Not"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 454.0
+offset_right = 676.0
+offset_bottom = 505.0
+text = "Play Game"
+script = ExtResource("4_pxanx")
+scene = ExtResource("6_6eh6r")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
