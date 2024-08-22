@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://c5627u7dbypxg"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_71c5h"]
+[ext_resource type="Texture2D" uid="uid://ds2udpm4pinhg" path="res://player_jump.png" id="2_0s5pt"]
+[ext_resource type="Texture2D" uid="uid://dl4kmd2oqtku0" path="res://player_walk.png" id="3_r78q6"]
+[ext_resource type="AudioStream" uid="uid://b433t0u6il4uy" path="res://player_death.wav" id="5_dxp1n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aso6p"]
+atlas = ExtResource("2_0s5pt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdy5q"]
+atlas = ExtResource("2_0s5pt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxqrj"]
+atlas = ExtResource("2_0s5pt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnwn4"]
+atlas = ExtResource("3_r78q6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnod2"]
+atlas = ExtResource("3_r78q6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_616w5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aso6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdy5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxqrj")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnwn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnod2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awgah"]
+size = Vector2(6, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bo4ds"]
+radius = 4.17
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(4, 4)
+script = ExtResource("1_71c5h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_616w5")
+animation = &"jump"
+frame_progress = 0.712672
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_awgah")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="OnFloor" type="ShapeCast2D" parent="."]
+position = Vector2(-2.2, 12)
+shape = SubResource("CircleShape2D_bo4ds")
+target_position = Vector2(4.2, 0)
+
+[node name="DieNoise" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 3.25)
+stream = ExtResource("5_dxp1n")
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
