@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://b20157q0h1v61"]
+
+[ext_resource type="Texture2D" uid="uid://br8jxcg12xafd" path="res://Assets/Background/Brown.png" id="1_cdkhd"]
+[ext_resource type="PackedScene" uid="uid://dph7et77cwq6i" path="res://Scenes/fake_game_music.tscn" id="1_yxk1n"]
+[ext_resource type="Texture2D" uid="uid://bn6baq1n12vvu" path="res://Assets/flag-orpheus-left.png" id="2_dv7l4"]
+[ext_resource type="Texture2D" uid="uid://2tnsr31gd7c3" path="res://Assets/Group 2.png" id="3_6qsox"]
+[ext_resource type="Texture2D" uid="uid://cfkkpd1f7rb5w" path="res://Assets/orpheus-skateboarding-PCB.png" id="3_31gik"]
+[ext_resource type="Script" path="res://Scripts/ButtonMenu.gd" id="3_vslq8"]
+[ext_resource type="PackedScene" uid="uid://c6se6sumwsxt8" path="res://Scenes/level_1.tscn" id="4_8bnjk"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="FakeGameMusic" parent="." instance=ExtResource("1_yxk1n")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cdkhd")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_top = 70.0
+offset_right = 119.0
+offset_bottom = 140.0
+texture = ExtResource("2_dv7l4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 285.0
+offset_top = 257.0
+offset_right = 445.0
+offset_bottom = 414.0
+texture = ExtResource("3_31gik")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 191.0
+offset_bottom = 68.0
+text = "For a Game Jam hosted by"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(0.44475, 0.28196, 0.119711, 1)
+offset_left = 490.0
+offset_top = 85.0
+offset_right = 664.0
+offset_bottom = 135.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Just Your"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 454.0
+offset_right = 676.0
+offset_bottom = 505.0
+text = "Play Game"
+script = ExtResource("3_vslq8")
+scene = ExtResource("4_8bnjk")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 288.0
+offset_top = 143.0
+offset_right = 825.0
+offset_bottom = 385.0
+texture = ExtResource("3_6qsox")
+expand_mode = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

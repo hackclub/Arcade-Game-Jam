@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dph7et77cwq6i"]
+
+[ext_resource type="AudioStream" uid="uid://dov8dgjjduuih" path="res://Assets/15sec-2021-10-19_-_Funny_Bit_-_www.FesliyanStudios.com.mp3" id="1_yggl1"]
+
+[node name="FakeGameMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_yggl1")
+autoplay = true
