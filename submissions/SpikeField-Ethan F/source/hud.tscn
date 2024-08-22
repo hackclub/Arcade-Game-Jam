@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://ngohkob1pybx"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_6irfp"]
+[ext_resource type="FontFile" uid="uid://dka0sn8vdw55g" path="res://Kenney Future Narrow.ttf" id="1_cld4m"]
+[ext_resource type="FontFile" uid="uid://d1trrc7qcjg50" path="res://Kenney Future.ttf" id="3_j6dmg"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_xsqhc"]
+device = -1
+pressed = true
+keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_2fywi"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_s6c2j"]
+events = [SubResource("InputEventKey_xsqhc"), SubResource("InputEventKey_2fywi")]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6irfp")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 337.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_cld4m")
+theme_override_font_sizes/font_size = 61
+text = "Score: 00"
+
+[node name="HighscoreLabel" type="Label" parent="."]
+offset_top = 60.0
+offset_right = 40.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("3_j6dmg")
+theme_override_font_sizes/font_size = 31
+text = "Highscore: 00"
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_cld4m")
+theme_override_font_sizes/font_size = 126
+text = "SpikeField"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -200.0
+offset_right = 121.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_cld4m")
+theme_override_font_sizes/font_size = 61
+shortcut = SubResource("Shortcut_s6c2j")
+text = "START"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="QuitButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -101.0
+offset_right = 83.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_j6dmg")
+theme_override_font_sizes/font_size = 56
+text = "Quit"
+
+[node name="Credits" type="Label" parent="."]
+layout_direction = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -315.0
+offset_bottom = 165.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_cld4m")
+theme_override_font_sizes/font_size = 21
+text = "Somebody else made this, 
+using Piskel and Godot.
+
+thank you SketchyLogic 
+for the song!!!!"
+clip_text = true
+text_overrun_behavior = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

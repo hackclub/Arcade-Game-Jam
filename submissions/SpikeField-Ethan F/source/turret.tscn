@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://di07f5j42vkj2"]
+
+[ext_resource type="Texture2D" uid="uid://ddq2ssjch5r3n" path="res://Turret.png" id="1_fcy5j"]
+[ext_resource type="Script" path="res://turret.gd" id="1_n8syo"]
+[ext_resource type="PackedScene" uid="uid://pp30cq61fq07" path="res://laser.tscn" id="2_ep1gh"]
+[ext_resource type="AudioStream" uid="uid://c28bmkas5ilwp" path="res://turret_fire.wav" id="4_vgh5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u77le"]
+size = Vector2(32, 16)
+
+[node name="Turret" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_n8syo")
+laser = ExtResource("2_ep1gh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.5, 0.5)
+texture = ExtResource("1_fcy5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 0.5)
+shape = SubResource("RectangleShape2D_u77le")
+
+[node name="FireTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="FireFrom" type="Marker2D" parent="."]
+position = Vector2(20.5, 0)
+
+[node name="FireNoise" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(20.5, 0)
+stream = ExtResource("4_vgh5m")
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
