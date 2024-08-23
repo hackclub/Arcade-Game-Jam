@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcy22ebc07uwj"]
+
+[ext_resource type="Script" path="res://rift.gd" id="1_07ca1"]
+[ext_resource type="Texture2D" uid="uid://dgtn5vq06dynv" path="res://assets/rift2.png" id="2_6wrky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns2en"]
+size = Vector2(189, 399)
+
+[node name="Rift" type="Area2D"]
+script = ExtResource("1_07ca1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+texture = ExtResource("2_6wrky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ns2en")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

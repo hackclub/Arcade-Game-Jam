@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1p01btjtsd3e"]
+
+[ext_resource type="Texture2D" uid="uid://da05qw81iw1hm" path="res://assets/sky.png" id="1_e4hwq"]
+[ext_resource type="Script" path="res://outside_view.gd" id="1_yajl3"]
+[ext_resource type="Texture2D" uid="uid://b2ujtukbgmoxx" path="res://assets/ground.png" id="2_sogcc"]
+[ext_resource type="Script" path="res://outside.gd" id="3_hna53"]
+[ext_resource type="AudioStream" uid="uid://daoba738arrm1" path="res://sound/break.mp3" id="5_jy3bq"]
+[ext_resource type="AudioStream" uid="uid://b2vtjooycto1c" path="res://sound/hit.mp3" id="6_c5jst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46106"]
+size = Vector2(2928.5, 330)
+
+[node name="OutsideView" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_yajl3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e4hwq")
+
+[node name="Ground" type="CharacterBody2D" parent="."]
+input_pickable = true
+script = ExtResource("3_hna53")
+main_scale = 5.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+position = Vector2(0, -40)
+texture = ExtResource("2_sogcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, 165)
+shape = SubResource("RectangleShape2D_46106")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="BreakTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BreakSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jy3bq")
+volume_db = -10.0
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c5jst")
+volume_db = -10.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="BreakTimer" to="." method="_on_break_timer_timeout"]
