@@ -9,6 +9,9 @@ I promise you this game is very basic, finished and not corrupted. I'm not a sil
 
 ### Linux
 
+- Download the linux version in the /build/ folder
+- Double click it
+- Enjoy because Linux is so much better than Windows
 
 ### MacOS
 
@@ -23,4 +26,3 @@ I promise you this game is very basic, finished and not corrupted. I'm not a sil
 - Grab the .exe file in /build/
 - Launch it
 - You're done.
-
