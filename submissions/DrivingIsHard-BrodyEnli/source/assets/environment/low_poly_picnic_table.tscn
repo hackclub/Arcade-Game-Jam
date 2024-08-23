@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbgi34pl7243c"]
+
+[ext_resource type="PackedScene" uid="uid://4igbifx0upfa" path="res://assets/environment/low_poly_picnic_table.glb" id="1_lb5ak"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a6svx"]
+friction = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d3jr"]
+size = Vector3(6.95093, 3.21606, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88iv2"]
+size = Vector3(6.95093, 2.75952, 1)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_lb5ak")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+physics_material_override = SubResource("PhysicsMaterial_a6svx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.626889, 0.779108, 0, -0.779108, 0.626889, 0.158813, 0.71773, 2.24099)
+shape = SubResource("BoxShape3D_1d3jr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(-1, 6.81118e-08, -5.48044e-08, 0, 0.626889, 0.779108, 8.74228e-08, 0.779108, -0.626889, 0.158813, 0.71773, -2.14142)
+shape = SubResource("BoxShape3D_1d3jr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(-1, -8.74228e-08, 0, -3.82137e-15, 4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0.158813, 1.58644, 0.0452792)
+shape = SubResource("BoxShape3D_88iv2")

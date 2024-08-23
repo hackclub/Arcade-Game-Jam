@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3oa0oygn0eif"]
+
+[ext_resource type="Script" path="res://menu/LevelResultOverlay.gd" id="1_emc7c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1jxr2"]
+font_size = 50
+font_color = Color(0.86, 0.2408, 0.2408, 1)
+shadow_size = 5
+shadow_color = Color(0.32, 0, 0, 0.87451)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrkkx"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7g6pm"]
+font_size = 24
+font_color = Color(0.65, 0.65, 0.65, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdnxa"]
+font_size = 50
+font_color = Color(0.28208, 0.86, 0.2408, 1)
+shadow_size = 5
+shadow_color = Color(0.0156863, 0.321569, 0, 0.87451)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g8fwb"]
+line_spacing = -3.0
+font_size = 24
+
+[node name="LevelResultOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_emc7c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.772549)
+
+[node name="FailTitle" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -60.0
+offset_right = 301.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FailText" type="Label" parent="ColorRect/FailTitle"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+text = "You got a parking ticket!!"
+label_settings = SubResource("LabelSettings_1jxr2")
+
+[node name="LawsBroken" type="Label" parent="ColorRect/FailTitle"]
+layout_mode = 2
+text = "Laws broken:"
+label_settings = SubResource("LabelSettings_nrkkx")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="FailedLaws" type="VBoxContainer" parent="ColorRect/FailTitle"]
+layout_mode = 2
+
+[node name="PressAnyKey" type="Label" parent="ColorRect/FailTitle"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Press any key to restart."
+label_settings = SubResource("LabelSettings_7g6pm")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SuccessTitle" type="Label" parent="ColorRect"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -60.0
+offset_right = 296.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You successfully parked!"
+label_settings = SubResource("LabelSettings_qdnxa")
+
+[node name="PressAnyKeyWin" type="Label" parent="ColorRect/SuccessTitle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.5
+offset_top = -34.0
+offset_right = 151.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Congratulations! You win the game! Thank you for playing!
+Press any key to go back to the menu."
+label_settings = SubResource("LabelSettings_g8fwb")
+horizontal_alignment = 1
+
+[node name="PressAnyKey" type="Label" parent="ColorRect/SuccessTitle"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -23.0
+offset_right = 101.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press any key to continue."
+label_settings = SubResource("LabelSettings_nrkkx")
+horizontal_alignment = 1

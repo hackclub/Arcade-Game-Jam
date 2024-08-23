@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://br7w0v0xmb57d"]
+
+[ext_resource type="Script" path="res://menu/lawList.gd" id="1_f08id"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r6tlh"]
+font_size = 35
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.819608)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Gradient" id="Gradient_6v7ar"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.111111, 0.222222, 0.333333, 0.444444, 0.555556, 0.666667, 0.777778, 0.888889, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.6, 0, 1, 0.8, 1, 0, 1, 0.2, 1, 0, 1, 0, 1, 0.4, 1, 0, 1, 1, 1, 0, 0.4, 1, 1, 0.2, 0, 1, 1, 0.8, 0, 1, 1, 1, 0, 0.6, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 9
+
+[sub_resource type="Gradient" id="Gradient_qybdg"]
+offsets = PackedFloat32Array(0, 0.411348, 0.985816)
+colors = PackedColorArray(1, 0, 0, 1, 0.29, 0, 0, 1, 0.92, 0.536667, 0, 1)
+
+[node name="LawList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f08id")
+
+[node name="ParkingLawsTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 79.0
+offset_bottom = 33.0
+text = "Parking laws:"
+label_settings = SubResource("LabelSettings_r6tlh")
+
+[node name="SuccessParticles" type="CPUParticles2D" parent="."]
+position = Vector2(23, 17)
+emitting = false
+amount = 5000
+lifetime = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 50.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+scale_amount_max = 2.0
+color_initial_ramp = SubResource("Gradient_6v7ar")
+
+[node name="FailParticles" type="CPUParticles2D" parent="."]
+position = Vector2(23, 17)
+emitting = false
+amount = 5000
+lifetime = 3.0
+direction = Vector2(0.5, -1)
+spread = 39.27
+gravity = Vector2(0, 500)
+initial_velocity_min = 25.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+scale_amount_max = 2.0
+color_initial_ramp = SubResource("Gradient_qybdg")
+
+[node name="LawList" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 59.0
+offset_right = 508.0
+offset_bottom = 113.0

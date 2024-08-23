@@ -1,0 +1,207 @@
+[gd_scene load_steps=21 format=3 uid="uid://biqopfwyou2a2"]
+
+[ext_resource type="Script" path="res://menu/mainMenu.gd" id="1_dpt0h"]
+[ext_resource type="Script" path="res://menu/fallingMenu.gd" id="2_cgjf7"]
+[ext_resource type="PackedScene" uid="uid://cfrjmwcq0qhjw" path="res://assets/vehicles/monsterTruck.glb" id="2_hrqxm"]
+[ext_resource type="PackedScene" uid="uid://bsuhm4lble4de" path="res://assets/vehicles/schoolBus.glb" id="3_qwa1b"]
+[ext_resource type="PackedScene" uid="uid://cohcovqvk1x6c" path="res://assets/vehicles/sedan.glb" id="4_1qe2k"]
+[ext_resource type="PackedScene" uid="uid://be7yxvpey7kiu" path="res://assets/vehicles/semiTruck.glb" id="5_hehvc"]
+[ext_resource type="PackedScene" uid="uid://cu5402l7eevvx" path="res://assets/vehicles/truck.glb" id="6_fmfbr"]
+[ext_resource type="PackedScene" uid="uid://d0f4yffyyul7j" path="res://assets/sign.glb" id="7_cprv2"]
+[ext_resource type="PackedScene" uid="uid://c2860mamagbm8" path="res://assets/environment/fireHydrant.glb" id="7_xs3dh"]
+[ext_resource type="PackedScene" uid="uid://b642r4ls07ygp" path="res://assets/tree.glb" id="8_yko7h"]
+[ext_resource type="PackedScene" uid="uid://wbukl437osdn" path="res://assets/environment/low_poly_trash_can.glb" id="10_vuhbv"]
+[ext_resource type="PackedScene" uid="uid://bbgi34pl7243c" path="res://assets/environment/low_poly_picnic_table.tscn" id="11_oeiim"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n3hjd"]
+sky_top_color = Color(0.14, 0.217, 0.35, 1)
+sky_horizon_color = Color(0.588922, 0.616995, 0.664951, 1)
+ground_bottom_color = Color(0.215686, 0.25098, 0.309804, 1)
+ground_horizon_color = Color(0.588922, 0.616995, 0.664951, 1)
+
+[sub_resource type="Sky" id="Sky_wlhvo"]
+sky_material = SubResource("ProceduralSkyMaterial_n3hjd")
+
+[sub_resource type="Environment" id="Environment_1hvak"]
+background_mode = 2
+sky = SubResource("Sky_wlhvo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SystemFont" id="SystemFont_2ny1l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_skega"]
+font = SubResource("SystemFont_2ny1l")
+font_size = 90
+font_color = Color(0, 0.35, 1, 1)
+outline_size = 10
+outline_color = Color(0.44, 0.561333, 1, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qgcq"]
+bg_color = Color(0, 0, 0, 0.470588)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="InputEventAction" id="InputEventAction_ccb0n"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_ccoxb"]
+events = [SubResource("InputEventAction_ccb0n")]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dpt0h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1hvak")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 10.463, -14.8906)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -16.857)
+fov = 35.0
+
+[node name="Falling" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="."]
+script = ExtResource("2_cgjf7")
+
+[node name="monsterTruck" parent="Objects" instance=ExtResource("2_hrqxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="schoolBus" parent="Objects" instance=ExtResource("3_qwa1b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 13.4888)
+
+[node name="sedan" parent="Objects" instance=ExtResource("4_1qe2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="semiTruck" parent="Objects" instance=ExtResource("5_hehvc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.6206, 11.1756)
+
+[node name="fireHydrant" parent="Objects" instance=ExtResource("7_xs3dh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="truck" parent="Objects" instance=ExtResource("6_fmfbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="sign" parent="Objects" instance=ExtResource("7_cprv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="tree" parent="Objects" instance=ExtResource("8_yko7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="Sketchfab_Scene" parent="Objects" instance=ExtResource("10_vuhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="Sketchfab_Scene2" parent="Objects" instance=ExtResource("11_oeiim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.953, 16.215)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.217, 0.24955, 0.31, 1)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_right = 183.0
+offset_bottom = 168.0
+grow_horizontal = 2
+text = "Parking is hard"
+label_settings = SubResource("LabelSettings_skega")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -50.5
+offset_right = 150.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../SelectLevelButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7qgcq")
+text = "Play"
+
+[node name="SelectLevelButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7qgcq")
+text = "Select level"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../SelectLevelButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7qgcq")
+text = "Info"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../PlayButton")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7qgcq")
+shortcut = SubResource("Shortcut_ccoxb")
+text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectLevelButton" to="." method="_on_select_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

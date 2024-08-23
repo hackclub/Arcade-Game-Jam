@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4prhrrvmjw1p"]
+
+[ext_resource type="Script" path="res://menu/pauseMenu.gd" id="1_hcm5f"]
+
+[sub_resource type="Shader" id="Shader_dsbqj"]
+code = "shader_type canvas_item;
+
+uniform float amount: hint_range(0.0, 5.0);
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
+
+void fragment() {
+	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, amount).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sraea"]
+shader = SubResource("Shader_dsbqj")
+shader_parameter/amount = null
+
+[sub_resource type="InputEventAction" id="InputEventAction_8bpn2"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_ojg3u"]
+events = [SubResource("InputEventAction_8bpn2")]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+material = SubResource("ShaderMaterial_sraea")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hcm5f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.129412, 0.129412, 0.87451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -20.0
+offset_right = 94.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Game paused"
+horizontal_alignment = 1
+
+[node name="ReturnToLevelSelect" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return to level select"
+
+[node name="Unpause" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_ojg3u")
+text = "Unpause"
+
+[connection signal="pressed" from="VBoxContainer/ReturnToLevelSelect" to="." method="_on_return_to_level_select_pressed"]
+[connection signal="pressed" from="VBoxContainer/Unpause" to="." method="_on_close_pressed"]

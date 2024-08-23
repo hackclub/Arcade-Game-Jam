@@ -1,0 +1,164 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddt3wriwe8jmy"]
+
+[ext_resource type="Script" path="res://menu/levelSelect.gd" id="1_rjd7b"]
+
+[sub_resource type="SystemFont" id="SystemFont_32ap8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n06gw"]
+font = SubResource("SystemFont_32ap8")
+font_size = 60
+font_color = Color(0, 0.35, 1, 1)
+outline_size = 4
+outline_color = Color(0.44, 0.561333, 1, 1)
+shadow_color = Color(0, 0.1295, 0.37, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l47dw"]
+content_margin_left = 20.0
+content_margin_top = 15.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.1742, 0.20566, 0.26, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_hcmft"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_i5c6o"]
+font_color = Color(0.81, 0.81, 0.81, 1)
+
+[sub_resource type="InputEventAction" id="InputEventAction_foexc"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_6pggj"]
+events = [SubResource("InputEventAction_foexc")]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rjd7b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.217, 0.24955, 0.31, 1)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_right = 183.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Select level"
+label_settings = SubResource("LabelSettings_n06gw")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LevelContainer" type="HFlowContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -182.0
+offset_right = -26.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+alignment = 1
+
+[node name="LevelTemplate" type="PanelContainer" parent="LevelContainer"]
+custom_minimum_size = Vector2(0, 230)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l47dw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelContainer/LevelTemplate"]
+custom_minimum_size = Vector2(200, 180)
+layout_mode = 2
+
+[node name="LevelNumber" type="Label" parent="LevelContainer/LevelTemplate/VBoxContainer"]
+layout_mode = 2
+text = "Level 1"
+label_settings = SubResource("LabelSettings_hcmft")
+
+[node name="LevelName" type="Label" parent="LevelContainer/LevelTemplate/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Tutorial lorem ipsum level name"
+label_settings = SubResource("LabelSettings_i5c6o")
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="LevelContainer/LevelTemplate/VBoxContainer"]
+layout_mode = 2
+
+[node name="LevelData" type="RichTextLabel" parent="LevelContainer/LevelTemplate/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=#ddd]Beaten: [color=#e66]No[/color]
+Laws: [color=#eee]3[/color]
+"
+fit_content = true
+
+[node name="PlayButtonContainer" type="VBoxContainer" parent="LevelContainer/LevelTemplate/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="PlayButton" type="Button" parent="LevelContainer/LevelTemplate/VBoxContainer/PlayButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Play"
+
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -61.0
+offset_right = 170.0
+offset_bottom = -30.0
+grow_vertical = 0
+shortcut = SubResource("Shortcut_6pggj")
+text = "Reset progress"
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -70.0
+offset_right = 75.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+shortcut = SubResource("Shortcut_6pggj")
+text = "Back"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
