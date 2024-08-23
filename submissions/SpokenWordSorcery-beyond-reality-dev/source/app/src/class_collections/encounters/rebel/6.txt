@@ -1,0 +1,4 @@
+"How unfortunate," ${"rebelName"} said, shaking his head.
+"You won't give just {"extortion"} gold pieces to help the cause?"
+"Well, I suppose we'll just have to take it from you."
+Press enter to continue...

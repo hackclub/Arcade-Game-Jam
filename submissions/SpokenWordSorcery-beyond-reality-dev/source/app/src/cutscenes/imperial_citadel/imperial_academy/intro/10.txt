@@ -1,0 +1,27 @@
+"These are the Three Oaths, which every prospective member of the Order must swear to."
+"Even if you lose yourself, you shall never harm our great Empire because of the Power of these memories."
+At that moment, you realized the truth in this statement.
+Even if you wanted to, a reason for which you cannot fathom, you could not raise a hand against the Order or the Empire it protects.
+You felt an adoration for the Order and the Empire, and particularly for the Grandmaster who you surmised is the man standing before you, that goes beyond anything you had ever felt before, even more so than that of your parents.
+"Strange," you thought to yourself. "What were their names again?"
+You shook your head, trying to clear it.
+You could still see their faces at that point, but their names were already lost to you.
+You felt a pang of sadness at this, but it quickly faded.
+You had a greater purpose than they could have ever imagined.
+Some amount of time passed after this, although you can no longer say how much.
+Most of your memories of this time are hazy, except for those of learning the Words.
+At some point, you were in a small room with another member of the Order, who was teaching you the first new words since <i>Remember</i>.
+You cannot think of his name, but you do not know if that is because you forgot it or because you never knew it.
+"It is time for a decision," he said.
+"We must carefully guard the Words of Power we share with you, because they are the most important things the Order possesses."
+"Therefore, we will only share with you a small portion of our repository."
+"The first Word I shall teach you is an element."
+"These are what give other Words power and substance."
+"Without them, the Words utilize the power of Aether, which can only affect the immaterial world such as our minds."
+"However, with them, the Words can affect the physical world."
+"I will give you a choice of three elements to learn."
+"But I cannot of course speak them all aloud, so I can only hint at their natures."
+"Would you like to learn an element that is the most destructive, able to consume all in its path?"
+"Or perhaps the one that is the most fluid, able to take on any form?"
+"Or the one that is the most stable, able to withstand the greatest of forces?"
+"Which of the three would you like to learn?"

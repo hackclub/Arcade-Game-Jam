@@ -1,0 +1,9 @@
+"I knew it!" {"leaderName"} exclaimed gleefully.
+"Now everything will be set right!"
+He turned to the guards.
+"Open the gates!" he commanded.
+The guards eagerly obeyed, and the gates swung open.
+{"leaderName"} gestured for you to enter.
+"You should find your way to the Governor's Palace," he said.
+"He will want to speak with you personally, I'm sure."
+You nodded, and stepped through the gates.

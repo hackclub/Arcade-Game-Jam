@@ -1,0 +1,3 @@
+"Good, good," {"rebelName"} said, smiling.
+"Thank you for your contribution to the cause."
+You continue on your way {"extortion"} gold pieces lighter.

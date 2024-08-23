@@ -1,0 +1,7 @@
+"It appears that you're a little low on funds," the rebel sneers, looking at you without a hint of sympathy.
+"Come back when you have the gold, and we'll let you pass."
+"We don't offer discounts to the Empire's lackeys."
+"Good day."
+Do you:
+1. Turn back and return to the Citadel Walls?
+2. Try and force your way through the gate?

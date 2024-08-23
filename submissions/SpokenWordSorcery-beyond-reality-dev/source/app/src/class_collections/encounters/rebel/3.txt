@@ -1,0 +1,14 @@
+After a few moments of searching, the rebels are satisfied.
+"Looks like he's clean," a rebel says.
+The leader, who introduced himself as {"rebelName"}, nods.
+"Thank you, {"rebelName2}," he says.
+"Alright," he says, turning to you.
+"You're free to go."
+"Just as soon as you pay the liberation tax."
+"Today's rate is, let's see..."
+He looks you up and down, a calculating look in his eyes.
+"{"extortion"} gold pieces."
+You are surrounded, and it is clear that these rebels mean business.
+Do you:
+1. Pay the rebels the gold they demand?
+2. Refuse to pay, and try to fight your way out?

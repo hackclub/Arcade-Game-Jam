@@ -1,0 +1,3 @@
+"Now that you have selected your first element, I will now teach you two Words that you may shape the element into," he began.
+"The first Word is a weapon, that you can use to attack the enemies of the Order, of which there are many."
+"Speak the Word <i>Spear</i> now."

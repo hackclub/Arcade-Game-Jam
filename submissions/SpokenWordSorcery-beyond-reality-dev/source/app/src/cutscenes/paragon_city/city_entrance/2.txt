@@ -1,0 +1,11 @@
+As you approached the mighty gates of Paragon City, you heard a horn sound.
+You had been spotted.
+The gates opened, and a group of guards emerged.
+They surrounded you, weapons drawn.
+"{"name"}!" one of them spat.
+They advanced on you, their eyes filled with hatred.
+"You never should have come here," another snarled.
+"You, who forsake the Imperial Signet Ring, and allowed the Emperor to die," the first guard growled.
+"By my authority as {"leaderName"}, Captain of the {"entrance"} Guard, I sentence you to death," he declared.
+The guards raised their weapons, ready to strike.
+Press enter to continue...
