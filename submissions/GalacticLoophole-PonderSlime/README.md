@@ -1,8 +1,19 @@
 # Galactic Loophole
 This is my submission for the game jam. It takes place on an abandoned space station.
 The controls are fairly simple:
-WASD for movement, Q to trigger chance for lighting to change, E to swap gravity, and Space bar to jump. Esc pauses the game.
-You can customize these controls as needed.
+
+## Basic controls
+| Key | Action        |
+|-----|---------------|
+| W   | Walk forward  |
+| S   | Walk backward |
+| A   | Walk left     |
+| D   | Walk right    |
+| Q   | Toggle Light      |
+| E   | Swap Gravity  |
+| Esc | Pause         |
+
+You can customize these in the pause menu.
 
 You can download the game here:
 
