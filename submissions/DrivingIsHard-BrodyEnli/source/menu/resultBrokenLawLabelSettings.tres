@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://fmtt280rr83k"]
+
+[ext_resource type="FontFile" uid="uid://c4yvwch0lxmps" path="res://assets/InterVariable.woff2" id="1_85fa7"]
+
+[resource]
+font = ExtResource("1_85fa7")
+font_size = 25
+font_color = Color(0.66, 0.099, 0.099, 1)
+outline_color = Color(0.43, 0.0602, 0.0602, 0.870588)
+shadow_size = 2
+shadow_color = Color(0.43, 0.0602, 0.0602, 0.870588)

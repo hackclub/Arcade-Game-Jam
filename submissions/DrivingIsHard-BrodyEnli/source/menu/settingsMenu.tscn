@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5di27uj70aep"]
+
+[ext_resource type="Script" path="res://menu/settingsMenu.gd" id="1_ng3hn"]
+
+[sub_resource type="Shader" id="Shader_dsbqj"]
+code = "shader_type canvas_item;
+
+uniform float amount: hint_range(0.0, 5.0);
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
+
+void fragment() {
+	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, amount).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sraea"]
+shader = SubResource("Shader_dsbqj")
+shader_parameter/amount = null
+
+[sub_resource type="InputEventAction" id="InputEventAction_u2gnf"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_4ju65"]
+events = [SubResource("InputEventAction_u2gnf")]
+
+[node name="SettingsMenu" type="Control"]
+material = SubResource("ShaderMaterial_sraea")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ng3hn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.05, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -20.0
+offset_right = 94.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "This game was made for the Hack Club Arcade Jam in a little over 4 days. I joined the game jam late, so I unfortunately wasn't able to finish everything I wanted to, but I had a lot of fun making it while learning how to use Godot! The game jam's theme was [b]Loopholes[/b].
+
+The game is about finding loopholes in a set of parking laws that slowly gets stricter as the game progresses.
+
+All models were either made by me (like the vehicles and signs), from Kenney (like the roads and buildings), or free-to-use assets from Sketchfab.
+
+Thanks for playing!
+
+"
+fit_content = true
+
+[node name="Close" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_4ju65")
+text = "Close"
+
+[connection signal="pressed" from="VBoxContainer/Close" to="." method="_on_close_pressed"]

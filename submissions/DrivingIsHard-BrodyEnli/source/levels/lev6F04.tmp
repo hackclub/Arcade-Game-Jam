@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx4tced8ie5no"]
+
+[ext_resource type="PackedScene" uid="uid://dq002782w5tt4" path="res://sedan.tscn" id="1_c3dvp"]
+[ext_resource type="PackedScene" uid="uid://b642r4ls07ygp" path="res://assets/tree.glb" id="3_mm7ai"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.621258, -0.526714, 0.580182, 0.302059, 0.522212, 0.797531, -0.723048, 0.670722, -0.165329, 0.048811, 13.7083, 7.3885)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.012, -0.479721, 11.4517)
+use_collision = true
+size = Vector3(73.3406, 1, 89.3489)
+
+[node name="sedan" parent="." instance=ExtResource("1_c3dvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14338, 0, 8.41813)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="tree" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, 4.03925, 0.0202785, 5.77376)
+
+[node name="tree2" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, 4.96006, 0.0202785, 12.2096)
+
+[node name="tree3" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, 5.77014, 0.0202776, 18.8131)
+
+[node name="tree4" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, 6.77014, 0.0202776, 25.8131)
+
+[node name="tree5" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, 6.69195, 0.0202771, 31.4929)
+
+[node name="tree6" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, 1.6787, 0.0202771, 35.8353)
+
+[node name="tree7" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, -4.13925, 0.0202771, 39.3323)
+
+[node name="tree8" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, -9.76967, 0.0202771, 40.4593)
+
+[node name="tree9" parent="Environment" instance=ExtResource("3_mm7ai")]
+transform = Transform3D(1.50279, 0, 0, 0, 1.50279, 0, 0, 0, 1.50279, -17.427, 0.0202771, 39.9643)
