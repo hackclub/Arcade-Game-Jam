@@ -1,0 +1,7 @@
+As you walk along, you suddenly find yourself face to face with a group of rebels.
+They are armed and appear to be ready for a fight.
+"Halt, traveler!" one of them calls out.
+"I am {"rebelName"}, and by the authority of the {"cellName"}, I demand that you halt and prepare to be searched."
+Do you:
+1. Comply with their demands and halt?
+2. Refuse to comply and try to fight your way out?

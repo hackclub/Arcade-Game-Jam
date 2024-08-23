@@ -1,0 +1,24 @@
+As you approached the mighty gates of Paragon City, you heard a horn sound.
+You had been spotted.
+The gates opened, and a group of guards emerged.
+They surrounded you, weapons drawn.
+Then, they did something unexpected.
+They knelt before you, and one of them started to speak.
+"Hail, {"name"}!" he shouted. "We have been eagerly awaiting your arrival."
+"Hail, {"name"}!" the other guards echoed.
+"Glory to the Last Speaker!" the first guard cried.
+"Glory to the Last Speaker!" the others repeated.
+"Glory to the Grandmaster of the Arcane Order!" the first guard continued.
+"Glory to the Grandmaster of the Arcane Order!" the others chanted.
+"Glory to the heir of the Empire!" the first guard proclaimed.
+"Glory to the heir of the Empire!" the others shouted.
+They stood, and the first guard stepped forward.
+"I am Captain {"leaderName"}, commander of the {"entrance"} Guard," he said.
+"Even after the Emperor's death, we have kept the faith," he continued.
+"We did not abandon the cause, because we knew that one day, someone would come to restore the Empire to its former glory."
+"And now, that day has come."
+{"leaderName"} looked at you with hopeful expectation.
+"Are you the one who will lead us to victory?" he asked.
+What do you say?
+1. "You are mistaken. I am not who you have been waiting for."
+2. "I am who you think I am. I have come to reclaim the Empire."

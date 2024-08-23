@@ -1,0 +1,32 @@
+GENERAL:
+To play Spoken Word Sorcery, you can type phrases to interact with the game.
+You may optionally begin phrases with the letter "I" but it is not required.
+Similarly, you may optionally insert prepositions, articles, or other words that do not change the meaning of the phrase, like "a," "an," "to," and "the."
+For example, you can type either "I go north," "go to the north," etc. to move north.
+Punctuation and capitalization is irrelevant, and you can combine phrases with "and" in most cases.
+
+MOVEMENT:
+To move to a room connected to your current location, you can type "go," "run," "exit," "move," or "walk" followed by a cardinal (compass) direction.
+
+ITEMS:
+To pick up an item, you can type "take," "grab," "acquire," "obtain," "pick up," or "lift" followed by the item name.
+To drop an item, you can type "drop," "discard," "leave," or "lose" followed by the item name.
+To equip an item, you can type "equip" or "put on" followed by the item name.
+To unequip an item, you can type "unequip" or "take off" followed by the item name.
+For consumables, you can type "use," "consume," "drink," "eat," or "ingest" followed by the item name.
+
+COMBAT:
+To attack an enemy that is in front of you with a melee weapon, you can type "hit," "stab," "fight," "attack," "strike," "slash," "swing," or "thrust," followed by the weapon you wish to use. Optionally, you can add certain words like "with" before the weapon name. For example, "hit with sword," "stab with dagger," "swing sword," etc. will all work.
+To attack an enemy that is farther away or out of reach with a ranged weapon, you can type "aim," "fire," "shoot," "snipe," "throw," or "launch" followed by the weapon you wish to use. Optionally, you can add certain words like "with" before the weapon name. For example, "aim with bow," "fire crossbow," etc. will all work.
+To use a spell, you can type "say," "yell," "cast," "chant," "shout," "speak," "utter," "mutter," or "whisper" followed by the spell phrase.
+To turn and phase a different direction, you can type "turn," "face," or "look" followed by the direction, left or right, you want to face. If you wish to only turn 45 degrees, rather than 90 degrees, you can add "slightly" or "halfway" before the direction. For example, "turn slightly left," "face halfway right," etc. will work.
+To move during combat you can type "go," "run," "exit," "move," or "walk" followed by a direction, like "forward," "backward," "left," or "right," then a distance in feet, with a maximum of 20, optionally followed by the word "feet." For example "go forward 5 feet," "run left 10 feet." The grid is broken up into tiles, and each tile is 5 feet wide. Since moving diagonally requires you to move 7.5 feet, movements diagonally must be made in those increments, for example "go left forward 7.5 feet," or "run right backward 15 feet." Please note that the due to the keyword nature of the game, the order DOES matter. For example, "go 5 feet forward" will not work, but "go forward 5 feet" will.
+
+REST:
+If you are in a safe location, you can type "rest" or "sleep" to regain health and mana.
+
+REMEMBER:
+To remember a phrase, you can type "remember" followed by the phrase you want to remember.
+
+HELP:
+To view this help text again, you can type "help," "info," or "instructions."

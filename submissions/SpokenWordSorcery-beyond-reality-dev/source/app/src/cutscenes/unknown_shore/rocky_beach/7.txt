@@ -1,0 +1,42 @@
+"That's probably for the best," {"peasantName"} said.
+"This is not Imperial territory."
+"The Empire has no power here."
+"We were 'liberated' by the rebels a few years ago."
+"It hasn't made much of a difference, though."
+"They levied the same tax the Empire did."
+"A 'temporary measure,' they said."
+"But it's been years now."
+He mentioned that the war had been going on for years, but you had been told that the war had only just begun.
+It was no wonder that the Citadel had not received any reinforcements.
+The Empire had been fighting a losing battle for years.
+He paused, looking at you with a mix of pity and wariness.
+"Anyway, I'm sure you have questions."
+"But I'm not the best person to ask."
+"I'm just a fisherman, and" {"peasantName"} hesitated.
+"Given your clothing, I'm not sure I should be talking to you."
+"I would suggest that you change your clothes and find a place to stay."
+"There's a village to the west, by the name of {"villageName"}."
+"You should be able to find some help there."
+"Actually," he added, "I can offer you something."
+"Since you're not from here, you might need some help with the geography."
+He reached into his pocket and pulled out a small map.
+It was a rough sketch, but it showed the general layout of the area.
+He handed it to you.
+"Good luck, traveler."
+With that, {"peasantName"} turned and walked away.
+You watched him go, feeling a sense of unease.
+You were no longer on the Citadel, and you were no longer under the protection of the Empire.
+You were alone, and you had no idea what to do next.
+You decided to follow {"peasantName"}'s advice and head to the {"villageName"}.
+You hoped that you would find some answers there.
+Before you can leave, however, there is something you must do.
+Or rather, a choice you must make.
+You pull the ring out of the sand and examine it.
+It is a simple band of silver, with the Imperial seal engraved on it.
+It was a symbol of your loyalty to the Empire, and the Emperor.
+But is it still?
+You remember the words of your Oath, branded into your mind.
+But you also remember the loophole that saved your life.
+What do you do with the ring?
+1. Keep it. Your loyalty, like the ring, is untarnished.
+2. Leave it. Like you suspect the Emperor is, the ring will soon be buried beneath the waves.

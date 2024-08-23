@@ -1,0 +1,19 @@
+As the guards escort you through the gates into the grand hall of the Imperial Fortress, you can't help but feel a sense of trepidation.
+This is where it will all end, one way or another.
+As you walk further down the hall, you realize that the carpet beneath your feet has been recently dyed purple.
+The color of royalty.
+The more obvious sign of the Governor's ambitions, however, is the throne at the end of the hall.
+It is a makeshift throne, but by no means a humble one.
+It is adorned with gold and jewels, and the backrest is emblazoned with the Imperial Seal.
+The Governor himself is seated upon it, looking every bit the part of a king.
+And perhaps soon he will be.
+He gestures for you to approach.
+"Welcome, {"name"}," he says.
+"I have been expecting you."
+"You see, while your exploits have been impressive, they have also been quite disruptive."
+"And I cannot allow that to continue."
+"It is time for you to end this charade and accept your place in the new order."
+"Now, kneel before me, and swear your loyalty to the Empire."
+"And to your new Emperor."
+1. Acquiesce and kneel before the Governor.
+2. Refuse to kneel and challenge the Governor.

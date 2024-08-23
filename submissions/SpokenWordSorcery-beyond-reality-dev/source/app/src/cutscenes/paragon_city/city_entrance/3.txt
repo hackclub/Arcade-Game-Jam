@@ -1,0 +1,5 @@
+"Oh," {"leaderName} said, his voice filled with disappointment.
+"Very well, then," he continued.
+"We will keep looking for {"name"}, then."
+"You may proceed through the gates now."
+{"leaderName"} turned away from you, and the guards parted to let you through.

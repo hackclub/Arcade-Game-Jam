@@ -1,0 +1,18 @@
+"Halt!" one of the guards shouted.
+"Do you know where you are?" he demanded, rhetorically.
+"You are at the gates of the Imperial Fortress," he continued.
+"Where the Governor has resided since the fall of the Empire."
+Of course, you expected this.
+While the Citadel intentionally restricted members of the Order from knowing too much about Imperial politics, Paragon City was well known.
+Like the Citadel, it did not spring up organically.
+It was built by the Empire, and eventually became the last bastion of the Empire's power.
+The Governor of Paragon City did not officially hold power beyond the city's walls, of course, but the Emperor's death had left a power vacuum.
+And the Governor was the most powerful person left.
+The guard continued.
+"And this is obviously a time of heightened security," he said.
+"The very fact that you are here is suspicious."
+"Who are you, and what is your business here?"
+1. "I am {"name"}, and I have come to speak with the Governor."
+2. "I am {"name"}, and I have come to reclaim the Empire."
+3. "I am {"name"}, and I have no business here"
+4. "I am {"name"}, and I have come to kill the Governor."

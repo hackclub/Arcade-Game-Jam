@@ -1,0 +1,18 @@
+You awake to a bright light shining in your eyes. 
+You blink, trying to clear your vision, and realize that you are lying on a rocky beach. 
+The sun is high in the sky, and the sound of the waves crashing against the shore fills your ears.
+You sit up, groaning as you do so, and take in your surroundings.
+There is nothing but rocks and sand as far as the eye can see.
+You don't know where you are, except that it's neither the Imperial Citadel nor Paragon.
+You remember being hit by the boom on the ship, and then everything going dark.
+You must have been thrown overboard during the storm.
+You try to stand, but your legs are weak and unsteady.
+You must have been unconscious for some time, and you are feeling the effects of it now.
+You look around, trying to get your bearings, and see a path leading away from the beach.
+You know that you need to find help, and that the only way to do so is to follow that path.
+You take a deep breath, steeling yourself for the journey ahead, and begin to walk.
+After only a few steps, however, you hear a voice calling out to you.
+You turn, and see a figure standing on the beach, waving to get your attention.
+Do you:
+1. Approach the figure and see what they want?
+2. Ignore the figure and continue on your way?

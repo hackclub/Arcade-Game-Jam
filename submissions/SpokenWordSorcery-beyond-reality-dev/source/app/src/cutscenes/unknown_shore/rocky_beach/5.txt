@@ -1,0 +1,17 @@
+"Well, you have your beliefs and I have mine," ${"peasantName"} said, sounding offended.
+"But I'm not here to argue about that."
+"I'm still glad to see that you're alive."
+"Most people who wash up on this shore are not so lucky."
+"Now, I want to help you, but there's a bit of a complication," {"peasantName"} began.
+"I see your robes, and I recognized the ring lying on the sand over there."
+"You're a loyalist, aren't you?"
+The answer seems obvious, but you hesitate.
+Your Oath requires absolute loyalty to the Empire, but perhaps it has a caveat.
+You swore to serve the Arcane Order and the Empire, as long as you "remain on this earth."
+But the Citadel is an island, and you are no longer on the Citadel.
+Does your Oath still bind you?
+You know that a loophole in your Oath can be the difference between life and death, as you discovered fleeing the ruins of the Academy.
+How do you respond?
+1. "Yes, I serve the Emperor."
+2. "No, I am just a traveler."
+3. "What do you mean by 'loyalist'?"
