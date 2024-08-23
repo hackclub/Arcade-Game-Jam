@@ -2,8 +2,7 @@
 
 # Bulletslit Defender
 
-Bulletslit is a game about defending a fort. Really nothing else. You don't need to search for secrets, there isn't. \
-I promise you this game is very basic, finished and not corrupted. I'm not a silly dev adding easter eggs, hidden ends to my games \
+A game about defending a fort and nothing else. There is nothing else you can do in this game, defending a fort is the only gameplay in it, any other content found in the game is unintended, there's a fort and you must defend it, you can't leave the fort, there is no way to leave the fort and you must defend it.
 
 ## How to play
 
