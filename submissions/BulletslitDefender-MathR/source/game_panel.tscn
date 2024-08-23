@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl4f6f6w7osil"]
+
+[ext_resource type="Script" path="res://game_panel.gd" id="1_8tmhh"]
+[ext_resource type="Texture2D" uid="uid://cuqig6j0gtxaq" path="res://assets/panel.png" id="2_vh5p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e21ls"]
+size = Vector2(226, 173)
+
+[node name="GamePanel" type="Area2D"]
+script = ExtResource("1_8tmhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+texture = ExtResource("2_vh5p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e21ls")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

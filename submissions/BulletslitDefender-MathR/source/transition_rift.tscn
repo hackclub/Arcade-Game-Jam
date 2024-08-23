@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbixll5kvjupg"]
+
+[ext_resource type="Shader" path="res://glitch.gdshader" id="1_o1tgs"]
+[ext_resource type="Script" path="res://transition_rift.gd" id="1_t51jc"]
+[ext_resource type="Texture2D" uid="uid://cpl1trpavde31" path="res://assets/rift.png" id="2_wg8d6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jii4l"]
+shader = ExtResource("1_o1tgs")
+shader_parameter/intensity = 0.2
+shader_parameter/color = 0.2
+shader_parameter/thinness = 10.0
+shader_parameter/speed = 10.0
+shader_parameter/frequency = 100.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns2en"]
+size = Vector2(189, 399)
+
+[node name="TransitionRift" type="Area2D"]
+material = SubResource("ShaderMaterial_jii4l")
+position = Vector2(259, 111)
+script = ExtResource("1_t51jc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-2, -1)
+texture = ExtResource("2_wg8d6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ns2en")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

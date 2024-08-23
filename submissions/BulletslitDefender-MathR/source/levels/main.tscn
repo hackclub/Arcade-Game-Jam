@@ -1,0 +1,257 @@
+[gd_scene load_steps=22 format=4 uid="uid://cvj42odqk5axd"]
+
+[ext_resource type="TileSet" uid="uid://psj08wf81vds" path="res://wall.tres" id="1_74kdv"]
+[ext_resource type="Texture2D" uid="uid://bby4uyqar5fa" path="res://assets/furniture1.png" id="2_0qjt5"]
+[ext_resource type="PackedScene" uid="uid://dl4f6f6w7osil" path="res://game_panel.tscn" id="2_4tpxv"]
+[ext_resource type="Texture2D" uid="uid://di6yrbt7l1yhe" path="res://assets/furniture2.png" id="3_oqdeu"]
+[ext_resource type="Texture2D" uid="uid://bs0p8yky6xhg" path="res://panels/tuto.png" id="3_xvrbi"]
+[ext_resource type="Texture2D" uid="uid://f5nj0mlhk71s" path="res://assets/furniture3.png" id="4_6l28d"]
+[ext_resource type="PackedScene" uid="uid://ioxwrlmsxpfr" path="res://reload_box.tscn" id="4_h7ait"]
+[ext_resource type="Texture2D" uid="uid://c4gr3ber233ww" path="res://assets/furniture4.png" id="5_bgryk"]
+[ext_resource type="PackedScene" uid="uid://dcdem4tj87c6x" path="res://loophole.tscn" id="5_vgrav"]
+[ext_resource type="AudioStream" uid="uid://b2vtjooycto1c" path="res://sound/hit.mp3" id="6_7sh2m"]
+[ext_resource type="TileSet" uid="uid://b1m7plmymjmhb" path="res://tileset.tres" id="6_85rlu"]
+[ext_resource type="Texture2D" uid="uid://c1oexuwx1f3ib" path="res://assets/particles.png" id="7_biyqt"]
+[ext_resource type="PackedScene" uid="uid://cmbsjiqn01q6a" path="res://player.tscn" id="7_c8fus"]
+[ext_resource type="PackedScene" uid="uid://d1p01btjtsd3e" path="res://outside_view.tscn" id="8_2d4bg"]
+[ext_resource type="PackedScene" uid="uid://chef1fgir5x0c" path="res://tree.tscn" id="9_k3g85"]
+[ext_resource type="PackedScene" uid="uid://dbixll5kvjupg" path="res://transition_rift.tscn" id="10_ketto"]
+[ext_resource type="PackedScene" uid="uid://n5b3s1hr4o1t" path="res://levels/escape.tscn" id="11_5tm3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmlhk"]
+size = Vector2(268, 968)
+
+[sub_resource type="Animation" id="Animation_34tjt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Particles:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Particles:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jw3ra"]
+resource_name = "bonk"
+length = 0.4
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Particles:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Particles:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BonkSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_7sh2m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqaln"]
+_data = {
+"RESET": SubResource("Animation_34tjt"),
+"bonk": SubResource("Animation_jw3ra")
+}
+
+[node name="World" type="Node2D"]
+texture_filter = 1
+
+[node name="Wall" type="TileMapLayer" parent="."]
+position = Vector2(13, -502)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAIAAAD//wAAAAAAAAAAAAD/////AAAAAAIAAAAAAP//AAAAAAIAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP//AAAAAAIAAAACAP//AAAAAAIAAAACAAAAAAAAAAAAAAABAAAAAAAAAAUAAAAAAAAAAAAAAAIAAAD+////AAAAAAIAAAD+//7/AAAAAAAAAAD///7/AAAAAAUAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("1_74kdv")
+
+[node name="Furniture" type="Sprite2D" parent="."]
+position = Vector2(-126, -63)
+texture = ExtResource("2_0qjt5")
+
+[node name="Furniture2" type="Sprite2D" parent="."]
+position = Vector2(-265, -9)
+texture = ExtResource("3_oqdeu")
+
+[node name="Furniture3" type="Sprite2D" parent="."]
+position = Vector2(-804, -177)
+texture = ExtResource("4_6l28d")
+
+[node name="Furniture4" type="Sprite2D" parent="."]
+position = Vector2(-880, -29)
+texture = ExtResource("4_6l28d")
+
+[node name="Furniture5" type="Sprite2D" parent="."]
+position = Vector2(1374, -72)
+texture = ExtResource("5_bgryk")
+
+[node name="GamePanel" parent="." instance=ExtResource("2_4tpxv")]
+position = Vector2(1072, -54)
+panel_texture = ExtResource("3_xvrbi")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(-895, -414)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(-167, 32)
+shape = SubResource("RectangleShape2D_qmlhk")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(1445, -483)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall3"]
+polygon = PackedVector2Array(-2, 517, -2, 86, 456, 86, 458, -1172, 640, -526, 647, 500)
+
+[node name="ReloadBox" parent="." instance=ExtResource("4_h7ait")]
+position = Vector2(1295, -45)
+
+[node name="ReloadBox2" parent="." instance=ExtResource("4_h7ait")]
+position = Vector2(-774, -45)
+
+[node name="Loophole1" parent="." instance=ExtResource("5_vgrav")]
+position = Vector2(159, -132)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loophole1"]
+libraries = {
+"": SubResource("AnimationLibrary_hqaln")
+}
+
+[node name="BonkSound" type="AudioStreamPlayer2D" parent="Loophole1"]
+bus = &"sfx"
+
+[node name="Particles" type="Sprite2D" parent="Loophole1"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("7_biyqt")
+
+[node name="Loophole2" parent="." instance=ExtResource("5_vgrav")]
+position = Vector2(-441, -132)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loophole2"]
+libraries = {
+"": SubResource("AnimationLibrary_hqaln")
+}
+
+[node name="BonkSound" type="AudioStreamPlayer2D" parent="Loophole2"]
+bus = &"sfx"
+
+[node name="Particles" type="Sprite2D" parent="Loophole2"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("7_biyqt")
+
+[node name="Loophole3" parent="." instance=ExtResource("5_vgrav")]
+position = Vector2(805, -132)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loophole3"]
+libraries = {
+"": SubResource("AnimationLibrary_hqaln")
+}
+
+[node name="BonkSound" type="AudioStreamPlayer2D" parent="Loophole3"]
+bus = &"sfx"
+
+[node name="Particles" type="Sprite2D" parent="Loophole3"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("7_biyqt")
+
+[node name="Player" parent="." node_paths=PackedStringArray("camera_min", "camera_max") instance=ExtResource("7_c8fus")]
+position = Vector2(494, 36)
+camera_min = NodePath("CameraMin")
+camera_max = NodePath("CameraMax")
+
+[node name="CameraMax" type="Node2D" parent="Player"]
+process_mode = 4
+position = Vector2(951, 64)
+
+[node name="CameraMin" type="Node2D" parent="Player"]
+process_mode = 4
+position = Vector2(-1389, -736)
+
+[node name="Ground" type="TileMapLayer" parent="."]
+position = Vector2(67, -184)
+tile_map_data = PackedByteArray("AAD2/wIAAAACAAAAAAD2/wMAAAACAAEAAAD2/wQAAAACAAIAAAD3/wIAAAADAAAAAAD3/wMAAAADAAEAAAD3/wQAAAADAAIAAAD4/wIAAAACAAAAAAD4/wMAAAACAAEAAAD4/wQAAAACAAIAAAD5/wIAAAADAAAAAAD5/wMAAAADAAEAAAD5/wQAAAADAAIAAAD6/wIAAAACAAAAAAD6/wMAAAACAAEAAAD6/wQAAAACAAIAAAD7/wIAAAADAAAAAAD7/wMAAAADAAEAAAD7/wQAAAADAAIAAAD8/wIAAAACAAAAAAD8/wMAAAACAAEAAAD8/wQAAAACAAIAAAD9/wIAAAADAAAAAAD9/wMAAAADAAEAAAD9/wQAAAADAAIAAAD+/wIAAAACAAAAAAD+/wMAAAACAAEAAAD+/wQAAAACAAIAAAD//wIAAAADAAAAAAD//wMAAAADAAEAAAD//wQAAAADAAIAAAAAAAIAAAACAAAAAAAAAAMAAAACAAEAAAAAAAQAAAACAAIAAAABAAIAAAADAAAAAAABAAMAAAADAAEAAAABAAQAAAADAAIAAAACAAIAAAACAAAAAAACAAMAAAACAAEAAAACAAQAAAACAAIAAAADAAIAAAADAAAAAAADAAMAAAADAAEAAAADAAQAAAADAAIAAAAEAAIAAAACAAAAAAAEAAMAAAACAAEAAAAEAAQAAAACAAIAAAAFAAIAAAADAAAAAAAFAAMAAAADAAEAAAAFAAQAAAADAAIAAAAGAAIAAAACAAAAAAAGAAMAAAACAAEAAAAGAAQAAAACAAIAAAAHAAIAAAADAAAAAAAHAAMAAAADAAEAAAAHAAQAAAADAAIAAAAIAAIAAAACAAAAAAAIAAMAAAACAAEAAAAIAAQAAAACAAIAAAAJAAIAAAADAAAAAAAJAAMAAAADAAEAAAAJAAQAAAADAAIAAAAKAAIAAAACAAAAAAAKAAMAAAACAAEAAAAKAAQAAAACAAIAAAALAAIAAAADAAAAAAALAAMAAAADAAEAAAALAAQAAAADAAIAAAAMAAIAAAACAAAAAAAMAAMAAAACAAEAAAAMAAQAAAACAAIAAAANAAIAAAADAAAAAAANAAMAAAADAAEAAAANAAQAAAADAAIAAAD2/wUAAAACAAMAAAD3/wUAAAADAAMAAAD4/wUAAAACAAMAAAD5/wUAAAADAAMAAAD6/wUAAAACAAMAAAD7/wUAAAADAAMAAAD8/wUAAAACAAMAAAD9/wUAAAADAAMAAAD+/wUAAAACAAMAAAD//wUAAAADAAMAAAAAAAUAAAACAAMAAAABAAUAAAADAAMAAAACAAUAAAACAAMAAAADAAUAAAADAAMAAAAEAAUAAAACAAMAAAAFAAUAAAADAAMAAAAGAAUAAAACAAMAAAAHAAUAAAADAAMAAAAIAAUAAAACAAMAAAAJAAUAAAADAAMAAAAKAAUAAAACAAMAAAALAAUAAAADAAMAAAAMAAUAAAACAAMAAAANAAUAAAADAAMAAAA=")
+tile_set = ExtResource("6_85rlu")
+
+[node name="OutsideView" parent="." node_paths=PackedStringArray("loophole") instance=ExtResource("8_2d4bg")]
+position = Vector2(688, 1061)
+loophole = NodePath("../Loophole1")
+
+[node name="Tree" parent="OutsideView" instance=ExtResource("9_k3g85")]
+position = Vector2(-70, 14)
+z = 20.0
+
+[node name="OutsideView2" parent="." node_paths=PackedStringArray("loophole") instance=ExtResource("8_2d4bg")]
+position = Vector2(-574, 1066)
+loophole = NodePath("../Loophole2")
+
+[node name="Tree" parent="OutsideView2" instance=ExtResource("9_k3g85")]
+position = Vector2(-109, -92)
+z = 2.0
+
+[node name="Tree2" parent="OutsideView2" instance=ExtResource("9_k3g85")]
+position = Vector2(52, 0)
+z = 25.0
+
+[node name="OutsideView3" parent="." node_paths=PackedStringArray("loophole") instance=ExtResource("8_2d4bg")]
+position = Vector2(1765, 1071)
+loophole = NodePath("../Loophole3")
+
+[node name="Tree" parent="OutsideView3" instance=ExtResource("9_k3g85")]
+position = Vector2(124, 148)
+z = 42.0
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Sky"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.545098, 0.631373, 0.968627, 1)
+
+[node name="TransitionRift" parent="." instance=ExtResource("10_ketto")]
+position = Vector2(1751, -626)
+target_scene = ExtResource("11_5tm3y")
