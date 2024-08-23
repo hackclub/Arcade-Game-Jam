@@ -1,8 +1,8 @@
-![image](https://github.com/user-attachments/assets/978d45b0-9e8b-40f5-ad63-676886629f8d)
-
+![banner](https://github.com/user-attachments/assets/1b066896-ad97-48c0-879e-fa6574b2d33d)
 # Bulletslit Defender
 
-A game about defending a fort and nothing else. There is nothing else you can do in this game, defending a fort is the only gameplay in it, any other content found in the game is unintended, there's a fort and you must defend it, you can't leave the fort, there is no way to leave the fort and you must defend it.
+A game about defending a fort and not
+hing else. There is nothing else you can do in this game, defending a fort is the only gameplay in it, any other content found in the game is unintended, there's a fort and you must defend it, you can't leave the fort, there is no way to leave the fort and you must defend it.
 
 ## How to play
 
