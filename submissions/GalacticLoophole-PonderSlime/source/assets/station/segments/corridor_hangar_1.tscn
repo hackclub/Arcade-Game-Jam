@@ -1,0 +1,262 @@
+[gd_scene load_steps=7 format=3 uid="uid://du0rcpfvmq8x8"]
+
+[ext_resource type="Material" uid="uid://bw56xudy06u64" path="res://assets/station/segments/steps_mat.tres" id="1_el5ae"]
+[ext_resource type="Texture2D" uid="uid://77csnbu1qskp" path="res://assets/textures/kenney's-prototype-textures/PNG/Light/texture_03.png" id="2_mgt3w"]
+[ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="3_cfgry"]
+[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat_dark.tres" id="4_yhcib"]
+[ext_resource type="PackedScene" uid="uid://hrvjra3ybe7r" path="res://assets/station/light_strip.tscn" id="5_4g144"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvbs7"]
+albedo_texture = ExtResource("2_mgt3w")
+emission_enabled = true
+emission = Color(0.261598, 0.737, 0.954391, 1)
+emission_energy_multiplier = 7.0
+uv1_triplanar = true
+
+[node name="CorridorPuzzle1" type="Node3D"]
+
+[node name="CorridorRingExit" type="Node3D" parent="."]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CorridorRingExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="Walls" type="Node3D" parent="CorridorRingExit/CSGMesh3D"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(25, 1, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8, 8.3, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(1, 15, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -13.398, 16.004, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -13.398, 0.604, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 13.402, 16.004, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 13.402, 0.604, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(25, 1, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8, 8.3, 0)
+material_override = ExtResource("1_el5ae")
+use_collision = true
+size = Vector3(1, 15, 2)
+
+[node name="EmissionRing" type="Node3D" parent="CorridorRingExit/CSGMesh3D"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(25, 0.4, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1, 8.3, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(0.4, 15, 0.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -12.9927, 15.438, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(0.4, 2.3, 0.5)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -13.1511, 1.1924, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(0.6, 2.3, 0.5)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 13.1422, 15.288, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(0.4, 2.3, 0.5)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 13.1855, 1.279, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(0.4, 2.2, 0.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(25, 0.5, 0.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CorridorRingExit/CSGMesh3D/EmissionRing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1, 8.3, 0)
+material_override = SubResource("StandardMaterial3D_qvbs7")
+size = Vector3(0.4, 15, 0.5)
+
+[node name="CorridorPuzzle" type="CSGMesh3D" parent="."]
+
+[node name="Walls" type="Node3D" parent="CorridorPuzzle"]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8, 8.3, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 15, 20)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -13.398, 16.004, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 2.664, 20)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -13.398, 0.604, 0)
+material_override = ExtResource("4_yhcib")
+use_collision = true
+size = Vector3(1, 2.664, 20)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 13.398, 16.004, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 2.664, 20)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 13.402, 0.604, 0)
+material_override = ExtResource("4_yhcib")
+use_collision = true
+size = Vector3(1, 2.664, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+material_override = ExtResource("4_yhcib")
+use_collision = true
+size = Vector3(25, 1, 20)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8, 8.3, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 15, 20)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CorridorPuzzle/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(25, 1, 20)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2, 8.3, -10.5)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 20, 30)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D9"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.1, -5.6, -0.2)
+operation = 2
+size = Vector3(11, 5.5, 2)
+
+[node name="CorridorSegemnt" type="CSGMesh3D" parent="CSGBox3D9"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, -8.3, -0.2)
+
+[node name="Walls" type="Node3D" parent="CSGBox3D9/CorridorSegemnt"]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 3, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 4.334, 6)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -4.898, 5.404, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 2.664, 6)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -4.898, 0.604, 0)
+material_override = ExtResource("4_yhcib")
+use_collision = true
+size = Vector3(1, 2.664, 6)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 4.902, 5.404, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 2.664, 6)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 4.902, 0.604, 0)
+material_override = ExtResource("4_yhcib")
+use_collision = true
+size = Vector3(1, 2.664, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+material_override = ExtResource("4_yhcib")
+use_collision = true
+size = Vector3(8, 1, 6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 3, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(1, 4.334, 6)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D9/CorridorSegemnt/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+material_override = ExtResource("3_cfgry")
+use_collision = true
+size = Vector3(8, 1, 6)
+
+[node name="Details" type="Node3D" parent="CSGBox3D9/CorridorSegemnt"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D9/CorridorSegemnt/Details"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.1, 2.1, 0)
+material_override = ExtResource("1_el5ae")
+radius = 0.2
+height = 6.0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D9/CorridorSegemnt/Details"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.1, 2.1, 0)
+material_override = ExtResource("1_el5ae")
+radius = 0.2
+height = 6.0
+
+[node name="Details2" type="Node3D" parent="CSGBox3D9/CorridorSegemnt"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D9/CorridorSegemnt/Details2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.1, 2.1, 0)
+material_override = ExtResource("1_el5ae")
+radius = 0.2
+height = 6.0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D9/CorridorSegemnt/Details2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.1, 2.1, 0)
+material_override = ExtResource("1_el5ae")
+radius = 0.2
+height = 6.0
+
+[node name="Lights" type="Node3D" parent="CSGBox3D9/CorridorSegemnt"]
+
+[node name="LightStrip7" parent="CSGBox3D9/CorridorSegemnt/Lights" instance=ExtResource("5_4g144")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 5.5, 1.31134e-07)
+
+[node name="LightStrip8" parent="CSGBox3D9/CorridorSegemnt/Lights" instance=ExtResource("5_4g144")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 5.5, -1.31134e-07)

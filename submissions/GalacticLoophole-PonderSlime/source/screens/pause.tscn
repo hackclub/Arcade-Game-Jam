@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhphm7otee87j"]
+
+[ext_resource type="Script" path="res://screens/pause_screen.gd" id="1_vrplo"]
+[ext_resource type="PackedScene" uid="uid://vw7c1nvg3a2v" path="res://screens/options.tscn" id="2_i5a2w"]
+[ext_resource type="FontFile" uid="uid://kmrd4o2glyp1" path="res://assets/font/Inter_18pt-Regular.ttf" id="3_gsynl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q3gvu"]
+
+[node name="PauseScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrplo")
+
+[node name="ScreenVisibility" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScreenVisibility"]
+material = SubResource("CanvasItemMaterial_q3gvu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.389287, 0.389287, 0.389287, 0.4)
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenVisibility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenVisibility/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScreenVisibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gsynl")
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="ScreenVisibility/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gsynl")
+text = "Resume"
+
+[node name="Options" type="Button" parent="ScreenVisibility/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gsynl")
+text = "Options"
+
+[node name="Quit" type="Button" parent="ScreenVisibility/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gsynl")
+text = "Quit to Main Menu"
+
+[node name="OptionsScreen" parent="." instance=ExtResource("2_i5a2w")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="OptionsScreen/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_gsynl")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ScreenVisibility/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ScreenVisibility/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ScreenVisibility/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="OptionsScreen/MarginContainer/VBoxContainer/Button" to="." method="_on_exit_pressed"]
+
+[editable path="OptionsScreen"]

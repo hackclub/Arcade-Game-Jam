@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://duv8dof50h8m4"]
+
+[ext_resource type="PackedScene" uid="uid://dx0jglxv086j0" path="res://assets/station/segments/corridor_segment_1.tscn" id="1_wmrxv"]
+[ext_resource type="PackedScene" uid="uid://d20oxhdc0umqj" path="res://assets/station/segments/corridor_merger_3_way.tscn" id="2_0auid"]
+[ext_resource type="PackedScene" uid="uid://dydh8twbudv4n" path="res://assets/station/segments/corridor_merger_4_way.tscn" id="2_if756"]
+[ext_resource type="PackedScene" uid="uid://bjregjuegk86n" path="res://assets/station/segments/corridor_ring_exit.tscn" id="4_lpc35"]
+[ext_resource type="PackedScene" uid="uid://cdvqyxn8erqgq" path="res://assets/station/segments/corridor_staircase.tscn" id="5_phd5r"]
+[ext_resource type="PackedScene" uid="uid://dbfx5gq5t4iw4" path="res://assets/station/segments/corridor_puzzle_room_1.tscn" id="6_rme5h"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Corridor1" type="Node3D" parent="."]
+
+[node name="CorridorSegmentRing1" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+
+[node name="CorridorSegmentRing2" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="CorridorSegmentRing3" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="CorridorSegmentRing4" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -26)
+
+[node name="CorridorSegmentRing5" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -12)
+
+[node name="CorridorSegmentRing6" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -26)
+
+[node name="CorridorSegmentRing7" parent="Corridor1" instance=ExtResource("1_wmrxv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 0, -26)
+
+[node name="Rings" type="Node3D" parent="."]
+
+[node name="CorridorRingExit" parent="Rings" instance=ExtResource("4_lpc35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38)
+
+[node name="CorridorRingExit3" parent="Rings" instance=ExtResource("4_lpc35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 46, 0, -26)
+
+[node name="Mergers" type="Node3D" parent="."]
+
+[node name="CorridorMerger4Way" parent="Mergers" instance=ExtResource("2_if756")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26)
+
+[node name="CorridorMerger3Way" parent="Mergers" instance=ExtResource("2_0auid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -26)
+
+[node name="CorridorSegmentRing1" parent="." instance=ExtResource("5_phd5r")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 0, -26)
+
+[node name="CorridorPuzzle1" parent="." instance=ExtResource("6_rme5h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -7, -55)

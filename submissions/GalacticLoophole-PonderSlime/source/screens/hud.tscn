@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://h7dwggfe5icg"]
+
+[ext_resource type="Script" path="res://screens/hud.gd" id="1_sss1q"]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("cursor_bottom", "cursor_top", "cursor_left", "cursor_right")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_sss1q")
+cursor_bottom = NodePath("CenterContainer/Cursor/CursorBottom")
+cursor_top = NodePath("CenterContainer/Cursor/CursorTop")
+cursor_left = NodePath("CenterContainer/Cursor/CursorLeft")
+cursor_right = NodePath("CenterContainer/Cursor/CursorRight")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cursor" type="Control" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CursorBottom" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 2.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270433, 0.280202, 0.277817, 1)
+
+[node name="CursorTop" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270433, 0.280202, 0.277817, 1)
+
+[node name="CursorRight" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 14.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270433, 0.280202, 0.277817, 1)
+
+[node name="CursorLeft" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = -14.0
+offset_top = -2.0
+offset_right = -4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270433, 0.280202, 0.277817, 1)

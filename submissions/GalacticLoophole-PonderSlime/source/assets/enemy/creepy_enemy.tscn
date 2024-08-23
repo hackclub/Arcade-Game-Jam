@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgvupop7jkth8"]
+
+[ext_resource type="Script" path="res://assets/enemy/creepy_enemy.gd" id="1_4cutx"]
+[ext_resource type="ArrayMesh" uid="uid://b7hd18d0rxd2j" path="res://assets/models/Z2/Z2.obj" id="1_s3vpd"]
+[ext_resource type="Texture2D" uid="uid://bfdpsr5t55lw7" path="res://assets/models/Z2/z2_Color_s.jpg" id="2_1p7pi"]
+[ext_resource type="Texture2D" uid="uid://xaofns6gw1hi" path="res://assets/models/Z2/z2_spec_color_s.jpg" id="3_egsi1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8eqp"]
+resource_name = "Baked"
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.988235, 0.898039, 0.886275, 0.729412)
+albedo_texture = ExtResource("2_1p7pi")
+metallic = 0.2
+metallic_texture = ExtResource("3_egsi1")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x1ux6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rju0i"]
+
+[node name="CreepyEnemy" type="CharacterBody3D" node_paths=PackedStringArray("root")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+script = ExtResource("1_4cutx")
+root = NodePath(".")
+
+[node name="Z2" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_g8eqp")
+mesh = ExtResource("1_s3vpd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_x1ux6")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+metadata/teleportable_root = NodePath("..")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("CapsuleShape3D_rju0i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
