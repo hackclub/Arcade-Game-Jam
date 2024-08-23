@@ -1,4 +1,4 @@
-![banner]([https://github.com/theMathR/Arcade-Game-Jam/blob/main/submissions/BulletslitDefender-MathR/source/banner.png])
+![banner](https://github.com/theMathR/Arcade-Game-Jam/blob/main/submissions/BulletslitDefender-MathR/source/banner.png)
 # Bulletslit Defender
 
 A game about defending a fort and nothing else. There is nothing else you can do in this game, defending a fort is the only gameplay in it, any other content found in the game is unintended, there's a fort and you must defend it, you can't leave the fort, there is no way to leave the fort and you must defend it.
