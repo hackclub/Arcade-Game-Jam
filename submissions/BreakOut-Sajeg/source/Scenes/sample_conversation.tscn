@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://t61gnqnkreh4"]
+
+[ext_resource type="Script" path="res://Scripts/sample_conversation.gd" id="1_3qfs5"]
+[ext_resource type="PackedScene" uid="uid://deg2j8cndure2" path="res://Scenes/ai_manager.tscn" id="2_pmk35"]
+[ext_resource type="PackedScene" uid="uid://bys67aluqyox4" path="res://Scenes/player.tscn" id="3_hqeqc"]
+
+[node name="SampleConversation" type="Node2D"]
+script = ExtResource("1_3qfs5")
+
+[node name="AIManager" parent="." instance=ExtResource("2_pmk35")]
+character = "You are Dieter. You are in the prison because you stole clothes from a store. "
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 193.0
+offset_top = 495.0
+offset_right = 594.0
+offset_bottom = 586.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 62.0
+offset_top = 39.0
+offset_right = 1109.0
+offset_bottom = 439.0
+text = "Please type in the field below"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 914.0
+offset_top = 480.0
+offset_right = 1025.0
+offset_bottom = 579.0
+text = "Submit"
+
+[node name="Friendship" type="Label" parent="."]
+offset_left = 180.0
+offset_top = 601.0
+offset_right = 374.0
+offset_bottom = 624.0
+
+[node name="NPCInventory" type="Label" parent="."]
+offset_left = 716.0
+offset_top = 599.0
+offset_right = 849.0
+offset_bottom = 629.0
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 660.0
+offset_top = 474.0
+offset_right = 862.0
+offset_bottom = 590.0
+item_count = 4
+item_0/text = "Nothing"
+item_1/text = "Pen"
+item_2/text = "Bread"
+item_3/text = "Paper"
+
+[node name="Player" parent="." instance=ExtResource("3_hqeqc")]
+visible = false
+position = Vector2(810, 126)
+
+[connection signal="new_response" from="AIManager" to="." method="_on_ai_manager_new_response"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="item_clicked" from="ItemList" to="." method="_on_item_list_item_clicked"]
+[connection signal="multi_selected" from="ItemList" to="." method="_on_item_list_multi_selected"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpltripjs3xor"]
+
+[ext_resource type="TileSet" uid="uid://iga47b5fiujd" path="res://Assets/tileSet.tres" id="1_lx1t2"]
+[ext_resource type="Script" path="res://Scripts/level_1.5.gd" id="1_vsgr8"]
+[ext_resource type="Theme" uid="uid://cpwjiok04og8e" path="res://Assets/theme.tres" id="2_1al6g"]
+[ext_resource type="Script" path="res://Scripts/map.gd" id="2_akgu4"]
+[ext_resource type="PackedScene" uid="uid://vlj7bhi0c4gq" path="res://Scenes/barrel.tscn" id="3_uxkqg"]
+[ext_resource type="PackedScene" uid="uid://c7nchaclmj50b" path="res://Scenes/door.tscn" id="4_ywidl"]
+[ext_resource type="PackedScene" uid="uid://bys67aluqyox4" path="res://Scenes/player.tscn" id="6_6gpd2"]
+[ext_resource type="AudioStream" uid="uid://cv01mqhpik1xo" path="res://Assets/Voice Lines/skeleton.wav" id="7_hdvm4"]
+[ext_resource type="PackedScene" uid="uid://bglg08apkdrh4" path="res://Scenes/skeleton.tscn" id="7_sgyde"]
+
+[sub_resource type="Curve2D" id="Curve2D_vyujt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 103, 273, 0, 0, 0, 0, 72, 273, 0, 0, 0, 0, 72, 161, 0, 0, 0, 0, 103, 161, 0, 0, 0, 0, 103, 273)
+}
+point_count = 5
+
+[node name="Level1_5" type="Node2D"]
+script = ExtResource("1_vsgr8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -23776.0
+offset_top = -15145.0
+offset_right = 24581.0
+offset_bottom = 16029.0
+color = Color(0.0781567, 0.0781567, 0.0703441, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_lx1t2")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(655373, 327680, 0, 720909, 327680, 1, 720910, 327680, 1, 720908, 262144, 1, 655372, 262144, 0, 655374, 327680, 0, 786446, 327680, 1, 786445, 327680, 1, 720911, 327680, 1, 786447, 327680, 1, 655375, 524288, 2, 720912, 327680, 1, 655376, 327680, 0, 786448, 327680, 1, 720913, 458752, 1, 786449, 393216, 1, 655377, 393216, 0, 851984, 327680, 1, 851985, 458752, 1, 851983, 327680, 1, 917520, 327680, 2, 917521, 393216, 2, 917519, 327680, 2, 851981, 327680, 1, 917517, 327680, 2, 851980, 262144, 1, 917516, 262144, 2, 786444, 262144, 1, 851982, 327680, 1, 917518, 327680, 2, 1048583, 327680, 1, 983047, 327680, 1, 917511, 327680, 1, 851975, 327680, 1, 786439, 327680, 1, 720903, 327680, 1, 655367, 327680, 1, 589831, 327680, 1, 1048582, 327680, 1, 983046, 327680, 1, 917510, 327680, 1, 851974, 327680, 1, 786438, 327680, 1, 720902, 327680, 1, 655366, 327680, 1, 589830, 327680, 1, 1048581, 327680, 1, 983045, 327680, 1, 917509, 327680, 1, 851973, 327680, 1, 786437, 327680, 1, 720901, 327680, 1, 655365, 327680, 1, 589829, 327680, 1, 655364, 262144, 1, 589828, 262144, 1, 524293, 327680, 0, 524294, 524288, 2, 720900, 589824, 1, 786436, 589824, 1, 851972, 589824, 1, 917508, 262144, 1, 983044, 589824, 1, 1048580, 262144, 1, 1114118, 327680, 1, 1114117, 327680, 1, 524295, 327680, 0, 1114119, 327680, 1, 589832, 393216, 1, 655368, 458752, 1, 720904, 458752, 1, 786440, 393216, 1, 851976, 458752, 1, 917512, 393216, 1, 983048, 458752, 1, 1048584, 393216, 1, 1114116, 589824, 1, 1179654, 327680, 2, 1179653, 327680, 2, 1179652, 262144, 2, 1179655, 327680, 2, 1114120, 458752, 1, 1179656, 393216, 2, 524296, 393216, 0, 524292, 262144, 0)
+layer_1/name = "Walls"
+layer_1/tile_data = PackedInt32Array(524300, 0, 0, 524301, 65536, 0, 524302, 65536, 0, 524303, 65536, 0, 524304, 65536, 0, 524305, 131072, 0, 458763, 196608, 4, 458770, 262144, 4, 524306, 262144, 5, 589842, 262144, 5, 655378, 262144, 5, 720914, 262144, 5, 786450, 262144, 5, 851986, 262144, 5, 917522, 262144, 5, 524299, 196608, 5, 589835, 196608, 5, 655371, 196608, 5, 720907, 196608, 5, 786443, 196608, 5, 851979, 196608, 5, 917515, 196608, 5, 983051, 196608, 6, 983058, 262144, 6, 983057, 65536, 3, 983056, 65536, 3, 983055, 65536, 3, 983054, 65536, 3, 983053, 65536, 3, 983052, 65536, 3, 458756, 0, 0, 458757, 65536, 0, 458758, 65536, 4, 458759, 65536, 0, 393219, 196608, 4, 458755, 196608, 5, 524291, 196608, 5, 589827, 196608, 5, 655363, 196608, 5, 786435, 196608, 5, 851971, 196608, 5, 917507, 196608, 5, 983043, 196608, 5, 1114115, 196608, 5, 1048579, 196608, 5, 1179651, 196608, 5, 1245187, 196608, 6, 1245191, 65536, 3, 1245190, 65536, 3, 1245189, 65536, 3, 1245188, 65536, 3, 458760, 131072, 0, 720899, 196608, 5, 1245192, 65536, 3, 1245193, 262144, 6, 1179657, 262144, 5, 1114121, 262144, 5, 1048585, 262144, 5, 983049, 262144, 5, 917513, 262144, 5, 851977, 262144, 5, 786441, 262144, 5, 720905, 262144, 5, 655369, 262144, 5, 589833, 262144, 5, 524297, 262144, 5, 458761, 262144, 5, 393225, 262144, 4)
+layer_2/name = "Decorations"
+layer_2/tile_data = PackedInt32Array(524304, 589825, 0, 589840, 589825, 1, 524301, 0, 10, 524302, 65536, 10)
+script = ExtResource("2_akgu4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 201.0
+offset_top = 197.0
+offset_right = 273.0
+offset_bottom = 208.0
+theme = ExtResource("2_1al6g")
+text = "Look to the left"
+
+[node name="Barrel" parent="." instance=ExtResource("3_uxkqg")]
+position = Vector2(277, 210)
+loot_overwrite = "Key"
+id = 6
+
+[node name="Door" parent="." instance=ExtResource("4_ywidl")]
+position = Vector2(224, 136)
+next_scene = "res://Scenes/Levels/level_1.tscn"
+locked = false
+
+[node name="Player" parent="." instance=ExtResource("6_6gpd2")]
+position = Vector2(224, 163)
+level = 2
+
+[node name="Skeletons" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("7_hdvm4")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(16, 0)
+curve = SubResource("Curve2D_vyujt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(103, 273)
+progress = 286.0
+rotates = false
+
+[node name="Skeleton" parent="Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow", "player") instance=ExtResource("7_sgyde")]
+path_follow = NodePath("..")
+player = NodePath("../../../Player")
+blind = true
+
+[connection signal="finished" from="Player/Skeletons" to="Player" method="_on_skeletons_finished"]

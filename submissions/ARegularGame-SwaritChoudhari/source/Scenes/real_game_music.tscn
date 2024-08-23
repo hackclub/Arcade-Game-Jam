@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ykmvfaio0jyk"]
+
+[ext_resource type="AudioStream" uid="uid://cce4a58kq4417" path="res://Assets/1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3" id="1_5xf07"]
+
+[node name="RealGameMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_5xf07")
+autoplay = true
