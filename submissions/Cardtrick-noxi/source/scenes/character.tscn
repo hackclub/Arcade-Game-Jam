@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctjji8iaxg4qg"]
+
+[ext_resource type="Script" path="res://scripts/Character.gd" id="1_x7qg6"]
+[ext_resource type="Texture2D" uid="uid://ct103svanepry" path="res://sprites/Enemies/Mushroom.png" id="2_fmtxn"]
+[ext_resource type="Texture2D" uid="uid://td5peavms807" path="res://sprites/Icons/defendicon.png" id="3_t0xkc"]
+[ext_resource type="Texture2D" uid="uid://dde0vmmtkx35f" path="res://sprites/Icons/damage_change_sword.png" id="4_bp6p7"]
+
+[node name="EnemyCharacter" type="Node2D"]
+position = Vector2(1737, 641)
+script = ExtResource("1_x7qg6")
+max_health = 25
+health = 25
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(124, 39)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("2_fmtxn")
+
+[node name="Healthbar" type="ProgressBar" parent="."]
+offset_left = 42.0
+offset_top = -168.0
+offset_right = 212.0
+offset_bottom = -144.0
+max_value = 25.0
+value = 25.0
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="Healthbar"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 155.0
+offset_bottom = 24.0
+text = "25/25"
+horizontal_alignment = 1
+
+[node name="Shield" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(188, -195)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("3_t0xkc")
+
+[node name="ShieldNum" type="Label" parent="Shield"]
+offset_left = -73.5135
+offset_top = -19.5555
+offset_right = -14.5135
+offset_bottom = 29.4445
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+
+[node name="AttackChange" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(204, -130.75)
+scale = Vector2(0.624999, 0.648437)
+texture = ExtResource("4_bp6p7")
+
+[node name="AttackChgNum" type="Label" parent="AttackChange"]
+offset_left = -57.6001
+offset_top = -23.5181
+offset_right = -21.6001
+offset_bottom = 25.4819
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true

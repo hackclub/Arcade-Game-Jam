@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhqtjn0bq7lel"]
+
+[ext_resource type="Script" path="res://scripts/UsableCard.gd" id="1_p3xhh"]
+[ext_resource type="PackedScene" uid="uid://sho53lxaepy6" path="res://scenes/Card.tscn" id="2_u6mei"]
+[ext_resource type="Texture2D" uid="uid://b757mobery8di" path="res://sprites/CardImages/Sledgehammer.png" id="3_isdxc"]
+[ext_resource type="Script" path="res://scripts/cards/SledgehammerActions.gd" id="4_yhjbq"]
+
+[node name="Sledgehammer" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_p3xhh")
+action = NodePath("SledgehammerActions")
+
+[node name="Card" parent="." instance=ExtResource("2_u6mei")]
+position = Vector2(5.75, -209)
+CardName = "Sledgehammer"
+PlayDescription = "Deal 10 damage to an enemy object"
+ThrowDescription = "Deal 40 damage to an environmental object"
+CardCost = 2
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(4.74975, -274)
+scale = Vector2(2.02734, 2.65625)
+texture = ExtResource("3_isdxc")
+
+[node name="SledgehammerActions" type="Node2D" parent="."]
+script = ExtResource("4_yhjbq")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

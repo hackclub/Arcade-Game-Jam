@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnjvy5dftqqlh"]
+
+[ext_resource type="Script" path="res://scripts/Hand.gd" id="1_pqryc"]
+[ext_resource type="PackedScene" uid="uid://cy3ekvhyb2xuh" path="res://scenes/cards/claymore.tscn" id="2_02huh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jjgy"]
+radius = 1280.0
+
+[node name="Hand" type="Node2D"]
+script = ExtResource("1_pqryc")
+hand_radius = 1280
+card_angle = -43.0
+angle_limit = 25.0
+max_card_spread_angle = 5.0
+
+[node name="DebugShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8jjgy")
+
+[node name="test_card" parent="." instance=ExtResource("2_02huh")]
+visible = false
+position = Vector2(936, -872)
+rotation = 0.820305
+
+[node name="StagedLabel" type="Label" parent="."]
+visible = false
+offset_left = 150.0
+offset_top = -1951.0
+offset_right = 266.0
+offset_bottom = -1798.0
+theme_override_font_sizes/font_size = 40
+text = "J: play
+K: throw"
+
+[node name="NotEnoughManaLabel" type="Label" parent="."]
+visible = false
+z_index = 999
+offset_left = -251.0
+offset_top = -2000.0
+offset_right = 256.0
+offset_bottom = -1904.0
+theme_override_colors/font_color = Color(0.746585, 1.02978e-06, 1.45358e-07, 1)
+theme_override_font_sizes/font_size = 80
+text = "Not Enough Mana"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
