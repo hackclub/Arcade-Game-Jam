@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbqle7fwts2pd"]
+
+[ext_resource type="Script" path="res://assets/models/planets/black_hole_ring.gd" id="1_1h8kh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajec2"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpojw"]
+emission_enabled = true
+emission = Color(0.850412, 0.483005, 0.149329, 1)
+emission_energy_multiplier = 4.0
+
+[node name="BlackHole" type="Node3D"]
+script = ExtResource("1_1h8kh")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ajec2")
+radius = 6.45
+radial_segments = 24
+rings = 12
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hpojw")
+inner_radius = 6.5
+outer_radius = 7.5
+sides = 16
+ring_sides = 12
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0965926, -0.258819, 0, 0.0258819, -0.965926, 0, 1.7, 0)
+material_override = SubResource("StandardMaterial3D_hpojw")
+inner_radius = 9.0
+outer_radius = 15.0
+sides = 16
+ring_sides = 12

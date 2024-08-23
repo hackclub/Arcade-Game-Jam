@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwi078dil4t7i"]
+
+[ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
+[ext_resource type="Script" path="res://assets/player/item_pickup.gd" id="5_mpy4d"]
+[ext_resource type="PackedScene" uid="uid://cnml2nj5336o3" path="res://screens/post_proccesing.tscn" id="5_nnd4e"]
+[ext_resource type="Script" path="res://assets/station/spot_light_3d.gd" id="6_ckll0"]
+[ext_resource type="Script" path="res://assets/player/flashlight.gd" id="6_p7m71"]
+[ext_resource type="PackedScene" uid="uid://h7dwggfe5icg" path="res://screens/hud.tscn" id="8_6366g"]
+[ext_resource type="PackedScene" uid="uid://dhphm7otee87j" path="res://screens/pause.tscn" id="8_m4q8c"]
+[ext_resource type="ArrayMesh" uid="uid://dsqurovlynvp" path="res://assets/models/items/flashlight.obj" id="10_gh5kp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
+
+[node name="FPSPlayerController" type="CharacterBody3D" node_paths=PackedStringArray("cam")]
+script = ExtResource("1_k8u5h")
+gravity = 19.6
+cam = NodePath("Camera")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ohydy")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.09)
+fov = 59.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera"]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 2147483649
+collide_with_areas = true
+script = ExtResource("5_mpy4d")
+
+[node name="Area3D" type="Area3D" parent="."]
+metadata/teleportable_root = NodePath("..")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_ohydy")
+
+[node name="PauseScreen" parent="." instance=ExtResource("8_m4q8c")]
+z_index = 100
+
+[node name="PostProccesing" parent="." instance=ExtResource("5_nnd4e")]
+mouse_filter = 2
+
+[node name="Flashlight2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0999339, -0.00363646, -1.58955e-10, 0.000437188, 0.0120144, 0.0992747, -0.00361009, -0.099209, 0.0120223, 0.1, 0.631925, -0.126834)
+mesh = ExtResource("10_gh5kp")
+
+[node name="Flashlight" type="Node3D" parent="Flashlight2"]
+transform = Transform3D(10, 2.38419e-07, 0, 2.38419e-07, 10, -1.19209e-07, -1.11759e-08, 0, 10, -0.0467876, 0.922233, 0.0178528)
+script = ExtResource("6_p7m71")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Flashlight2/Flashlight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.960531, 0.779623, 0.726805, 1)
+light_energy = 0.1
+spot_range = 30.0
+spot_attenuation = 1.1
+spot_angle = 20.0
+script = ExtResource("6_ckll0")
+
+[node name="HUD" parent="." instance=ExtResource("8_6366g")]
+z_index = -10

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d38bsrpjdy2n8"]
+
+[ext_resource type="Texture2D" uid="uid://4om336f5oaxr" path="res://assets/textures/misc/metal_plate.jpg" id="1_mxkfx"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_mxkfx")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true

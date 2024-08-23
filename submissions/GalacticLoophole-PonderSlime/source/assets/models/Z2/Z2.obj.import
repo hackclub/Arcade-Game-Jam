@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7hd18d0rxd2j"
+path="res://.godot/imported/Z2.obj-374a84341a57f239c7f5b8e1b9a456f0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Z2.obj-374a84341a57f239c7f5b8e1b9a456f0.mesh"]
+
+source_file="res://assets/models/Z2/Z2.obj"
+dest_files=["res://.godot/imported/Z2.obj-374a84341a57f239c7f5b8e1b9a456f0.mesh", "res://.godot/imported/Z2.obj-374a84341a57f239c7f5b8e1b9a456f0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

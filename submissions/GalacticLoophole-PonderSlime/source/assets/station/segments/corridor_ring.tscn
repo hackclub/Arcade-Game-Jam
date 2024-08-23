@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvbqwyjo8xb31"]
+
+[ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="1_pu1ty"]
+[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat_dark.tres" id="2_b2ri1"]
+
+[node name="CorridorSegmentRing1" type="Node3D"]
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+material_override = ExtResource("1_pu1ty")
+use_collision = true
+size = Vector3(8, 1, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 3, 0)
+material_override = ExtResource("1_pu1ty")
+use_collision = true
+size = Vector3(1, 4.334, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -4.898, 5.404, 0)
+material_override = ExtResource("1_pu1ty")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -4.898, 0.604, 0)
+material_override = ExtResource("2_b2ri1")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 4.902, 5.404, 0)
+material_override = ExtResource("1_pu1ty")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 4.902, 0.604, 0)
+material_override = ExtResource("2_b2ri1")
+use_collision = true
+size = Vector3(1, 2.664, 2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls"]
+material_override = ExtResource("2_b2ri1")
+use_collision = true
+size = Vector3(8, 1, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 3, 0)
+material_override = ExtResource("1_pu1ty")
+use_collision = true
+size = Vector3(1, 4.334, 2)

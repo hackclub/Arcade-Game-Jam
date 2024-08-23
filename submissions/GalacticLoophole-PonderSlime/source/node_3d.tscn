@@ -1,0 +1,167 @@
+[gd_scene load_steps=22 format=3 uid="uid://s7131ctflt1l"]
+
+[ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
+[ext_resource type="Shader" path="res://assets/shaders/outer_space.gdshader" id="2_liyho"]
+[ext_resource type="Script" path="res://assets/portal/portal.gd" id="3_i5fk7"]
+[ext_resource type="Script" path="res://assets/portal/portal_teleport.gd" id="4_wqpn4"]
+[ext_resource type="PackedScene" uid="uid://duv8dof50h8m4" path="res://assets/station/space_station_basic.tscn" id="6_q17r8"]
+[ext_resource type="PackedScene" uid="uid://ckk01rgfisu55" path="res://assets/models/planets/earth.tscn" id="7_fpf84"]
+[ext_resource type="PackedScene" uid="uid://dbqle7fwts2pd" path="res://assets/models/planets/black_hole.tscn" id="8_bixfs"]
+[ext_resource type="Shader" path="res://assets/shaders/engine_exhaust.gdshader" id="9_ccyv8"]
+[ext_resource type="PackedScene" uid="uid://cgvupop7jkth8" path="res://assets/enemy/creepy_enemy.tscn" id="10_d8fl7"]
+[ext_resource type="PackedScene" uid="uid://tybkiuiodgm3" path="res://assets/models/items/can.tscn" id="11_jpl5k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
+size = Vector2(10.7, 5)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
+size = Vector3(10.5, 5, 1)
+
+[sub_resource type="Gradient" id="Gradient_2h04q"]
+offsets = PackedFloat32Array(0.729412, 1)
+colors = PackedColorArray(0.850876, 0.294053, 0, 1, 0.12677, 0.686326, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aydao"]
+gradient = SubResource("Gradient_2h04q")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vjlbk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yj3w5"]
+noise = SubResource("FastNoiseLite_vjlbk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k75wo"]
+render_priority = 0
+shader = ExtResource("9_ccyv8")
+shader_parameter/noise = SubResource("NoiseTexture2D_yj3w5")
+shader_parameter/gradient = SubResource("GradientTexture1D_aydao")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_et1fb"]
+shader = ExtResource("2_liyho")
+shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
+shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
+shader_parameter/star_hue_offset = 0.6
+shader_parameter/star_intensity = 0.08
+shader_parameter/star_twinkle_speed = 0.8
+shader_parameter/star_twinkle_intensity = 0.2
+shader_parameter/layer_scale = 20.0
+shader_parameter/layer_scale_step = 10.0
+shader_parameter/layers_count = 3
+
+[sub_resource type="Sky" id="Sky_3h2n1"]
+sky_material = SubResource("ShaderMaterial_et1fb")
+
+[sub_resource type="Environment" id="Environment_lwn2a"]
+background_mode = 2
+sky = SubResource("Sky_3h2n1")
+sdfgi_y_scale = 0
+glow_enabled = true
+fog_density = 0.05
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_brightness = 0.6
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q0u4g"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18018, 0)
+
+[node name="SpaceStation" parent="." instance=ExtResource("6_q17r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 22.517)
+
+[node name="Portal1" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3, -3)
+mesh = SubResource("PlaneMesh_lcfor")
+skeleton = NodePath("../..")
+script = ExtResource("3_i5fk7")
+disable_viewport_distance = 110.0
+fade_out_distance_max = 100.0
+fade_out_distance_min = 80.0
+exit_portal = NodePath("../Portal2")
+
+[node name="Area3D" type="Area3D" parent="SpaceStation/Portal1"]
+script = ExtResource("4_wqpn4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpaceStation/Portal1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+shape = SubResource("BoxShape3D_p82rb")
+
+[node name="Portal2" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34, 3, -15)
+mesh = SubResource("PlaneMesh_lcfor")
+skeleton = NodePath("../..")
+script = ExtResource("3_i5fk7")
+disable_viewport_distance = 110.0
+fade_out_distance_max = 100.0
+fade_out_distance_min = 80.0
+exit_portal = NodePath("../Portal1")
+
+[node name="Area3D2" type="Area3D" parent="SpaceStation/Portal2"]
+script = ExtResource("4_wqpn4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpaceStation/Portal2/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+shape = SubResource("BoxShape3D_p82rb")
+
+[node name="Portal3" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -38.65, 8.83, -26)
+mesh = SubResource("PlaneMesh_lcfor")
+script = ExtResource("3_i5fk7")
+disable_viewport_distance = 110.0
+fade_out_distance_max = 100.0
+fade_out_distance_min = 80.0
+exit_portal = NodePath("../Portal2")
+
+[node name="Area3D" type="Area3D" parent="SpaceStation/Portal3"]
+script = ExtResource("4_wqpn4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpaceStation/Portal3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+shape = SubResource("BoxShape3D_p82rb")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.07929, 1.6, 0)
+material_override = SubResource("ShaderMaterial_k75wo")
+
+[node name="CreepyEnemy" parent="." instance=ExtResource("10_d8fl7")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -26.084, 1.03, -2.848)
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="Can" parent="Items" instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9907, 2.51761, -7.23136)
+
+[node name="Can2" parent="Items" instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9907, 2.51761, -7.23136)
+
+[node name="Can3" parent="Items" instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9907, 2.51761, -7.23136)
+
+[node name="Can4" parent="Items" instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9907, 2.51761, -7.23136)
+
+[node name="WorldEnv" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldEnv"]
+environment = SubResource("Environment_lwn2a")
+camera_attributes = SubResource("CameraAttributesPractical_q0u4g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnv"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+light_color = Color(0.915044, 0.929723, 0.92265, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="BlackHole" parent="WorldEnv" node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)
+player = NodePath("../../FPSPlayerController")
+
+[node name="Earth" parent="WorldEnv" instance=ExtResource("7_fpf84")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1750, 0, 0)
+
+[node name="PlayerRange" type="CSGSphere3D" parent="WorldEnv"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1, 0)
+use_collision = true
+radius = 100.0

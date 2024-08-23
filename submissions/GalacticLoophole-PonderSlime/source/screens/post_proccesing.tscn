@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnml2nj5336o3"]
+
+[ext_resource type="Shader" path="res://screens/vhs.gdshader" id="2_3d0ya"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_onowo"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2rep2"]
+seamless = true
+noise = SubResource("FastNoiseLite_onowo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgckh"]
+shader = ExtResource("2_3d0ya")
+shader_parameter/vhs_resolution = Vector2(320, 240)
+shader_parameter/samples = 2
+shader_parameter/crease_noise = 1.0
+shader_parameter/crease_opacity = 0.5
+shader_parameter/filter_intensity = 0.1
+shader_parameter/tape_crease_smear = 0.2
+shader_parameter/tape_crease_intensity = 0.2
+shader_parameter/tape_crease_jitter = 0.1
+shader_parameter/tape_crease_speed = 0.5
+shader_parameter/tape_crease_discoloration = 1.0
+shader_parameter/bottom_border_thickness = 6.0
+shader_parameter/bottom_border_jitter = 6.0
+shader_parameter/noise_intensity = 0.1
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_2rep2")
+
+[node name="PostProccesing" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VHS" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jgckh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.389287, 0.389287, 0.389287, 0.4)

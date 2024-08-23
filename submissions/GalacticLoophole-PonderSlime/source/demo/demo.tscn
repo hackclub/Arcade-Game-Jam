@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwy238cxfbs2q"]
+
+[ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="1_xvs24"]
+[ext_resource type="Script" path="res://addons/starlight/StarGenerator.gd" id="2_6mf2e"]
+[ext_resource type="Script" path="res://demo/Camera3D.gd" id="3_s6lel"]
+[ext_resource type="Script" path="res://demo/FPSCounter.gd" id="4_vr3pp"]
+[ext_resource type="Script" path="res://demo/HelpText.gd" id="5_dkbb2"]
+
+[sub_resource type="Environment" id="Environment_ah14t"]
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_l5rbr"]
+
+[node name="demo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ah14t")
+
+[node name="Stars" parent="." instance=ExtResource("1_xvs24")]
+script = ExtResource("2_6mf2e")
+size = 10000.0
+star_count = 100000
+rng_seed = 1234
+generate_at_origin = true
+shader_params/emission_energy = 5e+08
+shader_params/clamp_output = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.6718)
+script = ExtResource("3_s6lel")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.156173, 0.0545338, -0.986223, 0.071031, 0.99651, 0.0438544, 0.985173, -0.0632037, -0.159502, 10, 0, 0)
+mesh = SubResource("BoxMesh_l5rbr")
+
+[node name="FPSCounter" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 56.0
+offset_bottom = 31.0
+text = "fps: 60"
+script = ExtResource("4_vr3pp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 16.0
+omni_range = 39.474
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -274.0
+offset_right = 298.0
+offset_bottom = -5.0
+grow_vertical = 0
+vertical = true
+
+[node name="HelpText" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "= controls =
+pan: hold right click
+move: wasd
+up/down: q/e
+faster/slower: mouse wheel
+sprint: shift
+= info =
+github.com/tiffany352/godot-starlight
+star count: 100 000"
+
+[node name="HelpTextButton" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "hide"
+script = ExtResource("5_dkbb2")

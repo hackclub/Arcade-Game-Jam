@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckk01rgfisu55"]
+
+[ext_resource type="Texture2D" uid="uid://cqtbww4war1ds" path="res://assets/textures/planets/earth_color.png" id="1_ov51i"]
+[ext_resource type="Script" path="res://assets/models/planets/earth.gd" id="1_r3k38"]
+[ext_resource type="Texture2D" uid="uid://n4yiwjv5n70h" path="res://assets/textures/planets/earth_clouds.png" id="2_vjvhf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st1ev"]
+transparency = 1
+albedo_texture = ExtResource("2_vjvhf")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4cgs"]
+albedo_texture = ExtResource("1_ov51i")
+texture_filter = 0
+
+[node name="Earth" type="Node3D"]
+script = ExtResource("1_r3k38")
+
+[node name="Planet" type="Node3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 183.412, -79.7498, 0, 79.7498, 183.412, 0, 0, 0)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Planet"]
+material_override = SubResource("StandardMaterial3D_st1ev")
+radius = 6.45
+radial_segments = 24
+rings = 12
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Planet"]
+material_override = SubResource("StandardMaterial3D_w4cgs")
+radius = 6.371
+radial_segments = 24
+rings = 12
