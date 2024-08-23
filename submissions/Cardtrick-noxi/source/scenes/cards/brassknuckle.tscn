@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://crydtqc4gvjxo"]
+
+[ext_resource type="Script" path="res://scripts/UsableCard.gd" id="1_vdcdn"]
+[ext_resource type="PackedScene" uid="uid://sho53lxaepy6" path="res://scenes/Card.tscn" id="2_k3bvk"]
+[ext_resource type="Texture2D" uid="uid://fow342lh2kpa" path="res://sprites/CardImages/Brassknuckle.png" id="3_gxn2u"]
+[ext_resource type="Script" path="res://scripts/cards/KnuckleActions.gd" id="4_f7c7j"]
+
+[node name="Brassknuckle" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_vdcdn")
+action = NodePath("KnuckleActions")
+
+[node name="Card" parent="." instance=ExtResource("2_k3bvk")]
+position = Vector2(5.74975, -209)
+CardName = "Brass Knuckle"
+PlayDescription = "Deal 3x2 DMG. Weaken target by 1 for each hit"
+ThrowDescription = "Fully break a target's shield. If target has no shield, slip"
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(4.74975, -274)
+scale = Vector2(2.02734, 2.65625)
+texture = ExtResource("3_gxn2u")
+
+[node name="KnuckleActions" type="Node2D" parent="."]
+script = ExtResource("4_f7c7j")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

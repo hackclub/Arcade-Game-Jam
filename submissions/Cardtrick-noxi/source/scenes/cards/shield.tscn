@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtoi8o7yixuaq"]
+
+[ext_resource type="PackedScene" uid="uid://sho53lxaepy6" path="res://scenes/Card.tscn" id="1_s8gng"]
+[ext_resource type="Script" path="res://scripts/UsableCard.gd" id="1_wldgq"]
+[ext_resource type="Texture2D" uid="uid://dy1mq80or30j" path="res://sprites/CardImages/shield.png" id="2_i111m"]
+[ext_resource type="Script" path="res://scripts/cards/ShieldActions.gd" id="4_uubsi"]
+
+[node name="Shield" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_wldgq")
+action = NodePath("ShieldActions")
+
+[node name="Card" parent="." instance=ExtResource("1_s8gng")]
+position = Vector2(5.74975, -209)
+CardName = "Kite Shield"
+PlayDescription = "Gain 6 shield."
+ThrowDescription = "Deal 4 DMG. If player shielded, deals +8 DMG."
+CardCost = 2
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(4.74975, -274)
+scale = Vector2(2.02734, 2.65625)
+texture = ExtResource("2_i111m")
+
+[node name="ShieldActions" type="Node2D" parent="."]
+script = ExtResource("4_uubsi")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnj8i1ngctqf2"]
+
+[ext_resource type="Script" path="res://scripts/deck_n_hand.gd" id="1_tjav7"]
+[ext_resource type="PackedScene" uid="uid://bnjvy5dftqqlh" path="res://scenes/hand.tscn" id="2_2du0w"]
+
+[node name="DeckHand" type="Node2D"]
+script = ExtResource("1_tjav7")
+
+[node name="Hand" parent="." instance=ExtResource("2_2du0w")]
+position = Vector2(1000, 2805)
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 38.0
+offset_top = 140.0
+offset_right = 120.0
+offset_bottom = 168.0
+text = "add snowflake"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 41.0
+offset_top = 180.0
+offset_right = 122.0
+offset_bottom = 208.0
+text = "add knuckles"
+
+[connection signal="card_activated" from="Hand" to="." method="_on_hand_card_activated"]
+[connection signal="hide_deck_view" from="Hand" to="." method="_on_hand_hide_deck_view"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

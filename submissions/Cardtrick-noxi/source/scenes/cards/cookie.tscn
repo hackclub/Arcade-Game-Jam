@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://8kvfmlauj50c"]
+
+[ext_resource type="Script" path="res://scripts/UsableCard.gd" id="1_lqvu7"]
+[ext_resource type="PackedScene" uid="uid://sho53lxaepy6" path="res://scenes/Card.tscn" id="2_g8cu3"]
+[ext_resource type="Texture2D" uid="uid://dtvxo0qyttvr0" path="res://sprites/CardImages/Cookie.png" id="3_ol6l4"]
+[ext_resource type="Script" path="res://scripts/cards/CookieActions.gd" id="4_iugyw"]
+
+[node name="Cookie" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_lqvu7")
+action = NodePath("CookieActions")
+
+[node name="Card" parent="." instance=ExtResource("2_g8cu3")]
+position = Vector2(5.75, -209)
+CardName = "Cookie"
+PlayDescription = "Increase attack by 2 DMG"
+ThrowDescription = "Double any player attack boost"
+CardCost = 1
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(4.74975, -274)
+scale = Vector2(2.02734, 2.65625)
+texture = ExtResource("3_ol6l4")
+
+[node name="CookieActions" type="Node2D" parent="."]
+script = ExtResource("4_iugyw")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

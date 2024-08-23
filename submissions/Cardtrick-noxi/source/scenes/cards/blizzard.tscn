@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfq14abfba7mx"]
+
+[ext_resource type="PackedScene" uid="uid://sho53lxaepy6" path="res://scenes/Card.tscn" id="1_c6ivp"]
+[ext_resource type="Script" path="res://scripts/UsableCard.gd" id="1_v4gn7"]
+[ext_resource type="Texture2D" uid="uid://dfw6a2oejbvvr" path="res://sprites/CardImages/Snowflake.png" id="2_ppihr"]
+[ext_resource type="Script" path="res://scripts/cards/SnowflakeActions.gd" id="3_mhpuv"]
+
+[node name="Blizzard" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_v4gn7")
+action = NodePath("BlizzardActions")
+
+[node name="Card" parent="." instance=ExtResource("1_c6ivp")]
+position = Vector2(5.74975, -209)
+CardName = "Blizzard"
+PlayDescription = "Deal 5 DMG to all enemies"
+ThrowDescription = "Inflict 3 DMG bleed on all enemies for 5 turns"
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(7, -269)
+scale = Vector2(2.02734, 2.125)
+texture = ExtResource("2_ppihr")
+
+[node name="BlizzardActions" type="Node2D" parent="."]
+script = ExtResource("3_mhpuv")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

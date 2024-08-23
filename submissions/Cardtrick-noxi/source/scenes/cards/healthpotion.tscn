@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl3vmml8wq173"]
+
+[ext_resource type="Script" path="res://scripts/UsableCard.gd" id="1_4ce32"]
+[ext_resource type="PackedScene" uid="uid://sho53lxaepy6" path="res://scenes/Card.tscn" id="1_s520r"]
+[ext_resource type="Texture2D" uid="uid://bdlyedvw3fy1n" path="res://sprites/CardImages/Healthpotion.png" id="2_ahhv3"]
+[ext_resource type="Script" path="res://scripts/cards/HealthpotionActions.gd" id="3_8n053"]
+
+[node name="Healthpotion" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_4ce32")
+action = NodePath("HealthpotionActions")
+
+[node name="Card" parent="." instance=ExtResource("1_s520r")]
+position = Vector2(5.75, -209)
+CardName = "Health Potion"
+PlayDescription = "Heal 5 HP"
+ThrowDescription = "Inflict 3 DMG bleed on an enemy for 2 turns"
+CardCost = 1
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(4.74975, -274)
+scale = Vector2(2.02734, 2.65625)
+texture = ExtResource("2_ahhv3")
+
+[node name="HealthpotionActions" type="Node2D" parent="."]
+script = ExtResource("3_8n053")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]
