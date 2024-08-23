@@ -1,0 +1,10 @@
+Despite your attempt at ignoring the figure, they continue to call out to you.
+When you refuse to respond, they start to walk towards you.
+You prepare yourself for a fight, but as they get closer, you realize that they are not a threat.
+They appear to be merely a peasant.
+More importantly, they do not look armed.
+"Greetings!" the figure called out.
+"I am {"peasantName"}," he continued. 
+"I saw you wash ashore, but I didn't want to disturb you in case you were dead."
+"Don't want any bad spirits or the like, of course."
+"I'm sure you can understand that, can't you?"

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Spoken Word Sorcery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="../electron/main.js"></script>
+  <script type="module" src="general.js"></script>
+</head>
+
+<body>
+  <section id="start-screen" class="start-screen">
+    <h1 id="start-title" class="start-title">Spoken Word Sorcery</h1>
+    <button id="start-button" class="start-button">Start a New Game</button>
+    <button id="load-button" class="start-button">Load an Existing Game</button>
+    <button id="about-button" class="start-button">About</button>
+  </section>
+
+  <section id="loading-screen" class="screen">
+    <h1 id="loading-title" class="start-title">Load an Existing Game</h1>
+    <select id="save-games" class="saves-box" title="save-games" name="save-games" size="5"></select>
+    <button id="loading-back" class="small-button">Back</button>
+    <button id="load-save" class="small-button">Load Save Game</button>
+    <button id="delete-save" class="small-button">Delete Save Game</button>
+  </section>
+
+  <section id="about-screen" class="screen">
+    <h1 id="about-title" class="start-title">About</h1>
+    <p id="about-text" class="about-text">Spoken Word Sorcery is a text-based role-playing game (RPG) written in
+      JavaScript. The game is designed to be as open world as possible, within the constraints of the format and
+      technical limitations.</p>
+    <button id="about-back" class="start-button">Back</button>
+  </section>
+
+  <section id="game-screen" class="screen">
+    <section id="left-sidebar" class="left-sidebar">
+      <button id="spellbook-button" class="icon-button"><span class="material-icons icon"><span
+            class="icon">book</span></span></button>
+      <button id="equipment-button" class="icon-button"><span class="material-icons icon"><span
+            class="icon">shield</span></span></button>
+      <button id="inventory-button" class="icon-button"><span class="material-icons icon"><span
+            class="icon">inventory</span></span></button>
+    </section>
+
+    <section id="right-sidebar" class="right-sidebar">
+      <button id="settings-button" class="icon-button"><span class="material-icons icon"><span
+            class="icon">settings</span></span></button>
+      <button id="map-button" class="icon-button"><span class="material-icons icon"><span
+            class="icon">map</span></span></button>
+      <button id="home-button" class="icon-button"><span class="material-icons icon"><span
+            class="icon">home</span></span></button>
+    </section>
+
+    <section id="title-bar" class="title-bar">
+      <div id="name-text" class="name-text">Name: </div>
+      <progress id="health-bar" class="health-bar" value="0" max="0"></progress>
+      <div id="health-text" class="health-text"></div>
+      <h1 id="title-text" class="title-text">Spoken Word Sorcery</h1>
+      <div id="level-text" class="level-text">Level: 0</div>
+      <progress id="mana-bar" class="mana-bar" value="0" max="0"></progress>
+      <div id="mana-text" class="mana-text"></div>
+    </section>
+
+    <section id="main">
+      <div id="main-content" class="main-content"></div>
+      <div id="input-bar" class="input-bar" contenteditable="true"></div>
+    </section>
+
+    <section id="spellbook-screen" class="sub-screen">
+      <h2>Spoken Spells</h2>
+      <select id="spoken-spells" class="spell-box" title="spoken-spells" name="spoken-spells" size="7"></select>
+      <h2>Known Spells</h2>
+      <select id="known-spells" class="spell-box" title="known-spells" name="known-spells" size="7"></select>
+      <h2>Memories</h2>
+      <select id="memories" class="spell-box" title="memories" name="memories" size="7"></select>
+    </section>
+
+    <section id="equipment-screen" class="sub-screen">
+      <h2 id="stats-display">Defense: | Attack: | Speed:</h2>
+      <hr class="solid">
+      <h2>Helmet</h2>
+      <select id="head" class="spell-box" title="helmet" name="helmet" size="1"></select>
+      <h2>Chest Gear</h2>
+      <select id="chest" class="spell-box" title="chest" name="chest" size="1"></select>
+      <h2>Leggings</h2>
+      <select id="legs" class="spell-box" title="leggings" name="leggings" size="1"></select>
+      <h2>Foot Gear</h2>
+      <select id="feet" class="spell-box" title="foot" name="foot" size="1"></select>
+      <h2>Main Hand</h2>
+      <select id="mainHand" class="spell-box" title="weapon" name="weapon" size="1"></select>
+      <h2>Off Hand</h2>
+      <select id="offHand" class="spell-box" title="shield" name="shield" size="1"></select>
+      <h2>Accessory</h2>
+      <select id="accessory" class="spell-box" title="accessory" name="accessory" size="1"></select>
+    </section>
+
+    <section id="inventory-screen" class="sub-screen">
+      <h2 id="gold-counter">Gold: | Encumbrance: </h2>
+      <hr class="solid">
+      <h2>Weapons</h2>
+      <select id="weapons" class="spell-box" title="weapons" name="weapons" size="4"></select>
+      <h2>Armor</h2>
+      <select id="armor" class="spell-box" title="armor" name="armor" size="4"></select>
+      <h2>Consumables</h2>
+      <select id="consumables" class="spell-box" title="consumables" name="consumables" size="4"></select>
+      <h2>Miscellaneous</h2>
+      <select id="miscellaneous" class="spell-box" title="misc" name="misc" size="4"></select>
+    </section>
+
+    <section id="settings-screen" class="sub-screen">
+      <div class="radio-group">
+        <p class="inline-title">Seconds between Lines:</p>
+        <div class="controls">
+          <label class="radio">
+            <input id="radio-zero" type="radio" name="time-settings" value="0">
+            Zero
+          </label>
+          <label class="radio">
+            <input id="radio-one" type="radio" name="time-settings" value="1000" checked="checked">
+            One
+          </label>
+          <label class="radio">
+            <input id="radio-two" type="radio" name="time-settings" value="2000">
+            Two
+          </label>
+          <label class="radio">
+            <input id="radio-three" type="radio" name="time-settings" value="3000">
+            Three
+          </label>
+          <label class="radio">
+            <input id="radio-four" type="radio" name="time-settings" value="4000">
+            Four
+          </label>
+        </div>
+      </div>
+      <div class="settings-group">
+        <button id="save-button" class="settings-button">Save Game</button>
+        <button id="quit-save" class="settings-button">Save Game and Exit</button>
+        <button id="quit-button" class="settings-button">Exit without Saving</button>
+      </div>
+    </section>
+
+    <section id="map-screen" class="special-sub-screen">
+      <div class="tab-spacer"></div>
+      <div id="local-map-button" class="map-tab">Local Map</div>
+      <div id="world-map-button" class="map-tab">World Map</div>
+      <div id="map-key-button" class="map-tab">Map Key</div>
+      <canvas id="map" class="map" width="800px" height="600px"></canvas>
+    </section>
+  </section>
+</body>

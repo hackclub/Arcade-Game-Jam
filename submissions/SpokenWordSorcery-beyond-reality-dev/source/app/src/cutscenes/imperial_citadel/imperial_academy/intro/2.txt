@@ -1,0 +1,7 @@
+"Well then, rise, {"name"}."
+"Welcome to the Imperial Academy."
+"As you know, this is where all those with the Power come to learn."
+"Here, you will be taught the ways of the Arcane Order."
+"Your training will be long and arduous, but it is necessary."
+"Without it, you will never be able to control the Power that you wield."
+"Are you ready to begin your training?"

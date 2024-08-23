@@ -1,0 +1,11 @@
+As you walk, you hear the sound of footsteps behind you.
+You turn, and see a masked figure standing there, a sword in their hand.
+"This way has a toll," they inform you, as you hear the sound of more footsteps approaching.
+"We only require a small fee, and you can be on your way."
+"A mere trifle, really," they continue, as you see more bandits emerge from the shadows.
+"Of course, if you refuse to pay, we will have to take it by force."
+"All we want is what is rightfully ours," they say, "just {"extortionPrice"} gold pieces."
+You are surrounded, and it is clear that these bandits mean business.
+Do you:
+1. Pay the bandits the gold they demand?
+2. Refuse to pay, and try to fight your way out?

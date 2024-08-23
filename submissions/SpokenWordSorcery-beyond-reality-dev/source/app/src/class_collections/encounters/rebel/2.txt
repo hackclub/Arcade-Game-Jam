@@ -1,0 +1,11 @@
+The rebels crowd around you, weapons drawn.
+They start to search you for any signs of Imperial affiliation.
+After a few moments, one of them finds the ring.
+He holds it up, a look of disgust on his face.
+"Good work, {"rebelName2"}," another rebel says.
+The first rebel, who introduced himself as {"rebelName"}, nods.
+"Thank you, {"rebelName2"}," he says.
+He turns to you, a sneer on his face.
+"For crimes against the people of {"cellName"}, you are hereby sentenced to death."
+The rebels attack, and you are forced to defend yourself.
+Press enter to continue...

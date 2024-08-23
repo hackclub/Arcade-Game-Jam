@@ -1,0 +1,9 @@
+"I suppose you are one of us after all."
+"I am grateful that you survived, but I do not understand how."
+"Many of our greatest warriors were killed in the attack."
+"I only managed to survive because I was not present at the time, sent away to warn the palace of the impending attack."
+"Yet you, a mere acolyte, managed to survive."
+"I would think you a traitor if not for your Oaths."
+"They are still binding, and will remain so until your death."
+"What are your orders?"
+Do you tell them about the Codex?
