@@ -1,0 +1,29 @@
+EndScreen:
+
+
+
+<EndScreen>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0,1
+        Rectangle
+            size: root.size
+    BoxLayout:
+        orientation: "vertical"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        Label:
+            id: label1
+            text: "The End."
+            size_hint: 0.3, 0.1
+            font_name: "Fonts\\GlitchGoblin.ttf"
+            font_size: "80dp"
+            pos_hint: {'center_x': .5}
+            color: 1, .2, .1, 1
+        Label:
+            id: label2
+            text: "Thanks for playing!"
+            size_hint: 0.3, 0.1
+            font_name: "Fonts\\GlitchGoblin.ttf"
+            font_size: "80dp"
+            pos_hint: {'center_x': .5}
+            color: 1, .2, .1, 1
