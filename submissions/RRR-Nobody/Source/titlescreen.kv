@@ -1,0 +1,113 @@
+TitleScreenWidget:
+
+<HoverButtons>:
+    font_name: "Fonts\\GlitchGoblin.ttf"
+    size_hint: 1, 0.1
+    pos_hint: {'center_x': .5}
+    background_color: 0, 0, 0, 0
+
+<TitleScreenWidget>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0,0
+        Rectangle
+            size: root.size
+    Image:
+        source: "Graphics\\GUI\\Sci-Fi UI Game Asset Pack\\white assets\\panels\\panel-2.png"
+        allow_stretch: True
+        keep_ratio: False
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        size: "300dp","580dp"
+
+    BoxLayout:
+        spacing: "10dp"
+        padding: "0dp", "0dp", "0dp", "30dp"
+        orientation: "vertical"
+        size_hint: None, None
+        size: "300dp", "580dp"  # Match the Image size
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}  # Center the layout
+        Label:
+            text: "RRR"
+            size_hint: 0.3, 0.1
+            font_name: "Fonts\\GlitchGoblin.ttf"
+            font_size: "80dp"
+            pos_hint: {'center_x': .5}
+            color: 1, .2, .1, 1
+        HoverButtons:
+            text:"Start"
+            on_press: root.parent.on_start_click()
+        HoverButtons:
+            text: "Controls"
+            on_press:root.Goto_controls_page()
+        HoverButtons:
+            text: "Settings"
+            on_press: root.Goto_settings_page()
+
+
+<SettingsWidget>:
+    cols:2
+    rows:4
+    size: root.size
+    Label:
+        text:"Settings"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+        font_size: "80dp"
+    Button:
+        text: "Back"
+        on_press:root.Back()
+        font_name: "Fonts\\GlitchGoblin.ttf"
+        background_normal: "Graphics\\GUI\\Sci-Fi UI Game Asset Pack\\white assets\\icons\\icon-triangule-3.png"
+        background_color: 1, 0, 0, 1
+    Label:
+        text:f"Brightness: {int(Brightness_Slider.value)}%"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Slider:
+        min: 0
+        max: 100
+        id: Brightness_Slider
+        value: 100
+        on_value: root.Change_brightness(self)
+    Label:
+        text:f"Music: {int(Music_Slider.value)}%"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Slider:
+        min: 0
+        max: 100
+        id: Music_Slider
+    Label:
+        text:f"Sound Effect: {int(Sound_Slider.value)}%"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Slider:
+        min: 0
+        max: 100
+        id: Sound_Slider
+
+<ControlsWidget>:
+    orientation: "vertical"
+    size: root.size
+    Label:
+        text: "Basic Controls"
+        pos_hint: {'center_x': .5,"center_y":.1}
+        font_name: "Fonts\\GlitchGoblin.ttf"
+        font_size: "80dp"
+    Label:
+        text: "Use arrow keys to move"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Label:
+        text: "Use Space to Jump"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Label:
+        text: "Use Shift to sprint"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Label:
+        text: "P to Pause"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+    Button:
+        text: "Back"
+        font_name: "Fonts\\GlitchGoblin.ttf"
+        on_press: root.Back()
+        pos_hint: {'center_x': .5}
+        size_hint: 0.4, 1
+        background_normal: "Graphics\\GUI\\Sci-Fi UI Game Asset Pack\\white assets\\icons\\icon-triangule-3.png"
+        background_color: 1, 0, 0, 1

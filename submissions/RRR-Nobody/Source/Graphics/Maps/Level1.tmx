@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="13">
+ <tileset firstgid="1" source="Main tiles.tsx"/>
+ <tileset firstgid="101" source="Guns.tsx"/>
+ <layer id="1" name="Background" width="20" height="20">
+  <data encoding="csv">
+45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,
+74,55,74,83,84,85,74,74,45,74,73,74,74,74,74,74,83,84,85,74,
+74,83,84,84,84,84,84,84,84,84,85,74,74,74,74,74,74,74,74,74,
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,63,64,64,64,64,64,
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,55,74,74,74,74,74,
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,55,45,45,45,45,45,
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,55,45,45,45,45,45,
+74,74,74,74,74,74,74,74,63,64,64,64,64,64,85,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45,
+45,45,45,45,45,45,45,45,45,74,74,74,74,74,74,45,45,45,45,45
+</data>
+ </layer>
+ <layer id="2" name="Main" width="20" height="20">
+  <data encoding="csv">
+18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,
+18,18,18,18,32,18,18,34,32,18,18,18,18,18,24,18,18,18,18,18,
+18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,32,
+38,38,38,38,38,38,38,38,38,38,38,38,39,39,39,39,39,39,39,39,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,8,8,8,10,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,18,34,18,30,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,18,18,18,30,
+7,8,8,8,8,8,8,8,10,0,0,0,0,0,0,27,18,18,18,30,
+27,18,18,18,18,18,18,18,30,0,0,0,0,0,0,27,18,18,18,30,
+27,18,18,18,18,18,18,18,30,0,0,0,0,0,0,27,18,34,18,30,
+27,18,18,23,34,33,18,18,30,0,0,0,0,0,0,27,18,18,18,30,
+27,18,18,18,18,18,18,18,30,0,0,0,0,0,0,27,18,18,18,30,
+27,18,18,18,18,18,18,18,30,0,0,0,0,0,0,27,18,18,18,30,
+27,18,18,18,18,19,18,18,30,0,0,0,0,0,0,27,18,34,18,30,
+27,33,18,18,18,18,18,18,30,0,0,0,0,0,0,27,18,18,18,30,
+27,18,18,18,18,18,18,18,30,0,0,0,0,0,0,27,18,18,18,30
+</data>
+ </layer>
+ <objectgroup id="3" name="Objects">
+  <object id="1" name="Spawn" x="58.1988" y="180.83">
+   <point/>
+  </object>
+  <object id="2" name="Rule" x="181.987" y="188.715" width="252.164" height="37.2105" rotation="21.3178">
+   <properties>
+    <property name="Color" type="color" value="#64121212"/>
+    <property name="Text" value="Rule 1: Player can't press space"/>
+    <property name="font_size" type="int" value="18"/>
+   </properties>
+   <text fontfamily="Montserrat" pixelsize="20" color="#64121212" bold="1">Rule 1: Player can't Jump</text>
+  </object>
+  <object id="11" name="Note" x="236.63" y="140.06" width="252.164" height="37.2105">
+   <properties>
+    <property name="Color" type="color" value="#64121212"/>
+    <property name="Text" value="Press Enter to Shoot. You shoot where your mouse is."/>
+    <property name="font_size" type="int" value="18"/>
+   </properties>
+   <text fontfamily="Montserrat" pixelsize="20" color="#64121212" bold="1">Press Enter to Shoot. You shoot where your mouse is.</text>
+  </object>
+  <object id="12" name="Cooldown" x="25.5423" y="89.2471" width="252.164" height="37.2105">
+   <properties>
+    <property name="Color" type="color" value="#ff0bc811"/>
+    <property name="Text" value="Cooldown: 0s"/>
+    <property name="font_size" type="int" value="18"/>
+   </properties>
+   <text fontfamily="Montserrat" pixelsize="20" color="#0bc811" bold="1">Cooldown: 0s</text>
+  </object>
+  <object id="9" name="NextSign" x="470.996" y="83.5699" width="145.871" height="22.9883">
+   <properties>
+    <property name="Color" type="color" value="#ff121212"/>
+    <property name="Text" value="Next Level -&gt;"/>
+    <property name="font_size" type="int" value="18"/>
+   </properties>
+   <text fontfamily="Montserrat" pixelsize="20" wrap="1" color="#121212" bold="1">Next Level -&gt;</text>
+  </object>
+  <object id="4" name="Gun" gid="102" x="331.754" y="439.427" width="100" height="35"/>
+  <object id="5" name="Anmo" gid="101" x="36.9474" y="69.4152" width="32" height="52"/>
+  <object id="6" name="GunInfo" x="337.082" y="502.003" width="121.918" height="45.4444">
+   <properties>
+    <property name="Color" type="color" value="#ff000000"/>
+    <property name="Text">Smg: Small Recoil
+Fast cooldown</property>
+    <property name="font_size" type="int" value="18"/>
+   </properties>
+   <text fontfamily="Montserrat" pixelsize="17" wrap="1">Smg: Small Recoil
+Fast cooldown</text>
+  </object>
+  <object id="7" name="AInfo" x="51.3216" y="15.4532" width="74.7602" height="20.7427">
+   <text wrap="1">P/Capcity</text>
+  </object>
+  <object id="8" name="Next" x="610.842" y="162" width="44.1637" height="131.743"/>
+ </objectgroup>
+</map>

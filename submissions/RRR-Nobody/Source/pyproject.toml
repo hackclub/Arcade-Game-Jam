@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rrr"
+version = "0.1.0"
+description = "A game with 3 rules player must follow."
+authors = ["Nobody"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Kivy = "^2.3.0"
+PyTMX = "^3.32"
+
+[tool.poetry.group.dev.dependencies]
+Kivy = "^2.3.0"
+PyTMX = "^3.32"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
