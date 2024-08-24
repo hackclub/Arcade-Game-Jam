@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aafcf880f45c2fcb757bfea9634dab, type: 3}
+  m_Name: Stage4
+  m_EditorClassIdentifier: 
+  _playerDist: 10
+  _reloadSpeed:
+    _min: 1
+    _max: 2
+  _firstShootDelay:
+    _min: 1
+    _max: 2
+  _shootDelays:
+  - _min: 0.2
+    _max: 0.3
+  - _min: 0.2
+    _max: 0.3
+  - _min: 0.2
+    _max: 0.3
+  _maxHealth: 200
+  _baseDamage:
+    _min: 40
+    _max: 45
+  _speed:
+    _min: 5
+    _max: 8
+  _defaultWeapon: {fileID: 11400000, guid: c665b1e10c85174b38a8fd5aeae8f793, type: 2}
+  _countOfEnemiesToSpawn: 4
+  _enemyToSpawn:
+  - {fileID: 7086293667160900216, guid: 752d3c009b9c991fda11473c9d32684e, type: 3}

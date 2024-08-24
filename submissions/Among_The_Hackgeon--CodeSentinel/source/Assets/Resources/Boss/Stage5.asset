@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aafcf880f45c2fcb757bfea9634dab, type: 3}
+  m_Name: Stage5
+  m_EditorClassIdentifier: 
+  _playerDist: 10
+  _reloadSpeed:
+    _min: 1
+    _max: 2
+  _firstShootDelay:
+    _min: 1
+    _max: 2
+  _shootDelays:
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.4
+    _max: 0.5
+  - _min: 0.2
+    _max: 0.5
+  - _min: 0.3
+    _max: 0.4
+  - _min: 0.5
+    _max: 0.8
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.3
+    _max: 0.4
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.7
+    _max: 0.8
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.4
+    _max: 0.8
+  - _min: 0.01
+    _max: 0.01
+  - _min: 0.01
+    _max: 0.02
+  - _min: 0.01
+    _max: 0.01
+  - _min: 0.01
+    _max: 0.01
+  - _min: 0.3
+    _max: 0.4
+  - _min: 0.2
+    _max: 0.3
+  - _min: 0.1
+    _max: 0.2
+  - _min: 0.1
+    _max: 0.2
+  _maxHealth: 400
+  _baseDamage:
+    _min: 10
+    _max: 15
+  _speed:
+    _min: 10
+    _max: 15
+  _defaultWeapon: {fileID: 11400000, guid: 8a9fde53c60c08e2ca70aa20c5dd4719, type: 2}
+  _countOfEnemiesToSpawn: 7
+  _enemyToSpawn:
+  - {fileID: 7086293667160900216, guid: a558a77254589727f9f34e8ff605bc32, type: 3}
+  - {fileID: 7086293667160900216, guid: 752d3c009b9c991fda11473c9d32684e, type: 3}
+  - {fileID: 7086293667160900216, guid: 81b0f03827074c545ab9a9a5f114cd11, type: 3}
+  - {fileID: 7086293667160900216, guid: 3b48221bbe6d91bb896d59493d3312db, type: 3}
+  - {fileID: 7086293667160900216, guid: 3b48221bbe6d91bb896d59493d3312db, type: 3}
+  - {fileID: 7086293667160900216, guid: 3b48221bbe6d91bb896d59493d3312db, type: 3}

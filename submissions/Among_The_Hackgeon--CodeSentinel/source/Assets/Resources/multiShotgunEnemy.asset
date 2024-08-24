@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a496ecbff9931d7918a858ad98335fc3, type: 3}
+  m_Name: multiShotgunEnemy
+  m_EditorClassIdentifier: 
+  _playerDist: 0
+  _reloadSpeed:
+    _min: 2.5
+    _max: 5
+  _firstShootDelay:
+    _min: 1
+    _max: 2
+  _aiType: 0
+  _shootDelays:
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0.6
+    _max: 0.7
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0.6
+    _max: 0.7
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  - _min: 0
+    _max: 0
+  _maxHealth: 150
+  _baseDamage:
+    _min: 12
+    _max: 26
+  _speed:
+    _min: 4
+    _max: 7
+  _defaultWeapon: {fileID: 11400000, guid: f5a8f72fa9b5107caa0448fa3888b77d, type: 2}
