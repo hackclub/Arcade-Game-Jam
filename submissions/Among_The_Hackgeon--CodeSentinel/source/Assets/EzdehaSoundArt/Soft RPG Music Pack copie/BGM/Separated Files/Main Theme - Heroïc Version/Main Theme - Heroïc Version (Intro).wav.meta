@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: c761d287e5f57480aba17f892f625250
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212935
+  packageName: Soft RPG Music Pack
+  packageVersion: 1.0
+  assetPath: "Assets/EzdehaSoundArt/Soft RPG Music Pack copie/BGM/Separated Files/Main
+    Theme - Heroi\u0308c Version/Main Theme - Heroi\u0308c Version (Intro).wav"
+  uploadId: 479572
