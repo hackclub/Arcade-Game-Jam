@@ -9,4 +9,4 @@ Use pip -r requirements.txt to get needed libraries. Then run main.py
 
 # Info
 
-An in-progress game. <br>So far you can only play around with brightness, start the game and die. Daily updates
+A pretty much finished game. Only missing sound and music.
