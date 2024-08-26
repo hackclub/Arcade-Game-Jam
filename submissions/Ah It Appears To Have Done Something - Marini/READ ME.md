@@ -8,7 +8,7 @@ which can be used to circumvent or otherwise avoid the purpose,
 implied or explicitly stated, of the system.
 ```
 
-Name inspired by the meme of the same name (https://youtu.be/bzmIitaLMfA).
+Name inspired by the homonymous meme (https://youtu.be/bzmIitaLMfA).
 
 ## Description
 
@@ -18,8 +18,31 @@ Solutions will be available in a separate files to avoid spoilers.
 
 Feel free to contact me at pmarini72107@gmail.com or message me on slack (name: Marini) if you want to report a bug or leave a review, but please keep in mind that this is my first platformer game made for my first game jam in rudimentary framework such as Pygame (i did the best I could in less than two weeks    😭).
 
-IMPORTANT: Game may be interpreted as a virus because of the interaction with the Windows API, if you see any Windows Defender messages or pop ups do not worry I can assure you I write nothing harmful (I know it's not very reassuring but idk to know much about it 😩).
+IMPORTANT: Game may be interpreted as a virus because of the interaction with the Windows API.  
 Used Github Copilot a bit to guide me in the right direction to avoid having to look through hundreds of pages of documentation of the Windows API.
+
+## Installation and execution
+
+[Original repo link](https://github.com/shogun-mar/Ah-It-Appears-To-Have-Done-Something) if you don't want to download all the games at once.
+
+Python 3 required, the specific version of python used to write this project is Python 3.12 64 bit.
+All the necessary pip packages can be installed through this command in the windows command prompt or any other equivalent command line tool.
+
+```
+pip3 install pygame numpy pillow comtypes pycaw
+```
+
+Written with Pygame 2.6.0, Numpy 2.0.1 and Pillow 10.4.0.  
+After doing this the program can be launched from any IDE or CLI by starting game.py.  
+
+When you're finished playing the game you can delete all the packages by using this command: 
+
+```
+pip3 uninstall pygame numpy pillow comtypes pycaw
+```
+
+## Requirements
+Windows 10 or 11 (written and tested on Windows 10 22H2).
 
 ## Keybinds and controls
 
@@ -33,26 +56,6 @@ Default keybinds:
 * ESCAPE &rarr; Pause the game
 * R &rarr; Reset the player's position and values
 * P &rarr; Exit the game
-
-## Requirements
-Windows 10 or 11 (written and tested on Windows 10 22H2).
-
-## Installation and execution
-Python 3 required, the specific version of python used to write this project is Python 3.12 64 bit.
-All the necessary pip packages can be installed through this command in the windows command prompt or any other equivalent command line tool.
-
-```
-pip3 install pygame numpy pillow comtypes pycaw
-```
-
-Written with Pygame 2.6.0, Numpy 2.0.1 and Pillow 10.4.0.  
-After doing this the program can be launched from any IDE or CLI by starting game.py.  
-
-When you are finished playing the game you can delete all the packages by using this command: 
-
-```
-pip3 uninstall pygame numpy pillow comtypes pycaw
-```
 
 ## Assets credits
 
