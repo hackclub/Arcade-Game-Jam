@@ -24,7 +24,8 @@ func _ready():
 	if Status.level:
 		$"CanvasLayer/Counters".texture = load("res://assets/ui2.png")
 		$CanvasLayer/Counters/Level.text = str(Status.level) if Status.level < Status.LAST_LEVEL else "NaN"
-		if Status.level == 2 and Status.loop == 1:
+		if Status.show_end5:
+			Status.show_end5 = false
 			Status.interacting = true
 			$CanvasLayer/Panel.texture = load('res://panels/end5.png')
 			$CanvasLayer/Panel.show()
@@ -146,7 +147,7 @@ func free_controls():
 
 func load_hat():
 	$Sprites/Head/Helmet.texture = load("res://hats/"+str(Status.hat)+".png")
-	$Sprites/Head/Helmet.position.y -= $Sprites/Head/Helmet.texture.get_height() - 144
+	$Sprites/Head/Helmet.position.y = 144-$Sprites/Head/Helmet.texture.get_height()
 
 func retry():
 	Status.bullets = 5 if Status.level != 2 else 4

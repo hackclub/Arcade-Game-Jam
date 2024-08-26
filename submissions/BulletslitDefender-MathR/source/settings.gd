@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	if Status.level == 0: material = null
+	if Status.level == 0: $Panel.material = null
 	$HSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("music")))
 	$HSlider2.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("sfx")))
 

@@ -13,11 +13,11 @@ var loop = 0
 var dead = false
 var shot = false
 var checkpoint = false
+var show_end5 = false
 var player: CharacterBody2D
 const BULLET_MAX = 5
 const LAST_LEVEL = 8
 const HATS_MAX = 9
-var is_choosing = false
 
 func _ready():
 	#debug_reset()
